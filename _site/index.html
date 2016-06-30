@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>R Bootcamp 2016</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">UCVM R Bootcamp Materials</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="day1.html">Day 1</a>
+</li>
+<li>
+  <a href="day2.html">Day 2</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">R Bootcamp 2016</h1>
+
+</div>
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Introduction to the R programming languange with a focus on using it for biological data analysis. The purpose of this course is to teach scientists (students, postdocs, PIs) in the biological and medical sciences to use R for typical data analyis tasks they might encounter routinely. This includes sequence analysis and other bioinformatics tasks. No prior knowledge of R is expected and workshop attendees can expect to come away with a skill set that is immediately translatable to their respective data tasks.</p>
+</div>
+<div id="workshop-structure" class="section level2">
+<h2>Workshop Structure</h2>
+<p>This is a three week course that will consist of a two hour lecture on Monday, Wednesday, and Friday mornings followed by a one hour lab session in the afternoon. There will be a total of 5 assignments which will be handed out during the labs, however, it is expected that attendees will need to spend time outside of the course in order to complete the assignments.</p>
+</div>
+<div id="learning-objectives" class="section level2">
+<h2>Learning Objectives</h2>
+<p>At the end of the workshop you will able to:</p>
+<ul>
+<li>Install and update R</li>
+<li>Use the Rstudio IDE</li>
+<li>Understand what CRAN and Bioconductor are and what the differences are between them</li>
+<li>Install and update R packages from CRAN and Bioconductor</li>
+<li>Import a wide variety of data types into R</li>
+<li>Understand the basic data types: integer, numeric, logical, character</li>
+<li>Understand R’s basic data structures: vector, matrix, list, data.frame</li>
+<li>Understand basic programming concepts: functions, objects, loops, vecotrization, conditionals</li>
+<li>Manipulate data structures by subsetting and indexing</li>
+<li>Understand key base R functions: seq, apply (and friends)</li>
+<li>Manipulate data with dplyr</li>
+<li>Make plots with ggplot</li>
+<li>Find help about any function</li>
+<li>Understand some common R errors and how to deal with them</li>
+<li>Find and evaluate R packages needed for a particular analysis</li>
+<li>Understand the difference between <code>&lt;-</code> and <code>=</code> and make your own choice about which one to use</li>
+<li></li>
+</ul>
+</div>
+<div id="outline" class="section level2">
+<h2>Outline</h2>
+<div id="preparation" class="section level3">
+<h3>Preparation</h3>
+<p>Attendees are expected to come with their own laptops and have already installed R and RStudio as well as completed at least one of the following online tutorials.</p>
+<ul>
+<li><a href="https://www.datacamp.com/courses/free-introduction-to-r" class="uri">https://www.datacamp.com/courses/free-introduction-to-r</a></li>
+<li><a href="http://tryr.codeschool.com/" class="uri">http://tryr.codeschool.com/</a></li>
+<li><a href="http://swirlstats.com/" class="uri">http://swirlstats.com/</a></li>
+</ul>
+<p>This small bit of preparation will allow us to move quickly through the basics and get to the good stuff.</p>
+</div>
+<div id="day-1-the-basics" class="section level3">
+<h3><a href="day1.html">Day 1: The basics</a></h3>
+<ul>
+<li>Introductions and course objectives</li>
+<li>Make sure everyone has R and Rstudio running</li>
+<li>Brief overview of the basic material
+<ul>
+<li>Data types</li>
+<li>Data structures</li>
+</ul></li>
+<li>How to get help and deal with errors</li>
+<li>Lab 1: Working with basic data types</li>
+</ul>
+</div>
+<div id="day-2-the-not-so-basics" class="section level3">
+<h3>Day 2: The not-so basics</h3>
+<ul>
+<li>Continue programming concepts</li>
+<li>Environments</li>
+<li>How to work with objects: subsetting, indexing, apply functions</li>
+<li>Other important key R functions including basic statistics</li>
+<li>Lab 2: Working with dataframes and lists</li>
+</ul>
+</div>
+<div id="day-3-practical-data-management" class="section level3">
+<h3>Day 3: Practical data management</h3>
+<ul>
+<li>dplyr and friends</li>
+<li>Restructuring data and doing stuff to it</li>
+<li>Bonus: stringr and regular expressions</li>
+<li>Lab 3: Get your data into R and do some stuff to it</li>
+</ul>
+</div>
+<div id="day-4-data-visualization" class="section level3">
+<h3>Day 4: Data visualization</h3>
+<ul>
+<li>ggplot</li>
+<li>heatmaps</li>
+<li>Lab 4: Building up a complex visualization</li>
+</ul>
+</div>
+<div id="day-5-introduction-to-bioconductor" class="section level3">
+<h3>Day 5: Introduction to Bioconductor</h3>
+<ul>
+<li>Finding and installing biocondutor packages</li>
+<li>Learning what packages do and how to evaluate them</li>
+<li>Intro to some key data structures: XStringSet, IRanges, expressionset, etc.</li>
+<li>Lab 5: How do I…?</li>
+</ul>
+</div>
+<div id="day-6" class="section level3">
+<h3>Day 6:</h3>
+<ul>
+<li>Rapid introduction to managing and reproducing your analysis: Rmarkdown, git and github, best practices</li>
+<li>Writing your own functions</li>
+<li>Review and catchup</li>
+</ul>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

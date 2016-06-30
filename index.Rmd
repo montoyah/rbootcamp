@@ -2,9 +2,7 @@
 title: "R Bootcamp 2016"
 output:
   html_document:
-    keep_md: yes
-    theme: spacelab
-  pdf_document: default
+    theme: sandstone
 ---
 
 ## Overview
@@ -52,7 +50,7 @@ Attendees are expected to come with their own laptops and have already installed
 This small bit of preparation will allow us to move quickly through the basics and get to the good stuff.
 
 
-### Day 1: The basics
+### [Day 1: The basics](day1.html)
 
 * Introductions and course objectives
 * Make sure everyone has R and Rstudio running

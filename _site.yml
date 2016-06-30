@@ -1,0 +1,10 @@
+name: "R Bootcamp"
+navbar:
+ title: "UCVM R Bootcamp Materials"
+ left:
+  - text: "Home"
+    href: index.html
+  - text: "Day 1"
+    href: day1.html
+  - text: "Day 2"
+    href: day2.html
