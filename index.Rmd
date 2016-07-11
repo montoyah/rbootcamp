@@ -11,7 +11,7 @@ Introduction to the R programming languange with a focus on using it for biologi
 
 ## Workshop Structure
 
-This is a three week course that will consist of a two hour lecture on Monday, Wednesday, and Friday mornings followed by a one hour lab session in the afternoon.  There will be a total of 5 assignments which will be handed out during the labs, however, it is expected that attendees will need to spend time outside of the course in order to complete the assignments.
+This is a two week course that will consist of a 3 hour classroom session on Monday, Wednesday, and Thursday mornings from 9 am - 12 pm.  These classroom session will consist of both lecuture and lab times and there will be a number of assignments that attendees will be required to complete outside of classroom times.
 
 
 ## Learning Objectives
@@ -28,13 +28,12 @@ At the end of the workshop you will able to:
 * Understand basic programming concepts: functions, objects, loops, vecotrization, conditionals
 * Manipulate data structures by subsetting and indexing
 * Understand key base R functions: seq, apply (and friends)
-* Manipulate data with dplyr
+* Manipulate data with dplyr and friends
 * Make plots with ggplot
 * Find help about any function
 * Understand some common R errors and how to deal with them
 * Find and evaluate R packages needed for a particular analysis
 * Understand the difference between `<-` and `=` and make your own choice about which one to use
-* 
 
 
 ## Outline
@@ -50,7 +49,8 @@ Attendees are expected to come with their own laptops and have already installed
 This small bit of preparation will allow us to move quickly through the basics and get to the good stuff.
 
 
-### [Day 1: The basics](day1.html)
+### [Day 0: Introduction](day0.html)
+__Thursday, September 8, 9:00 - 10:00 am__
 
 * Introductions and course objectives
 * Make sure everyone has R and Rstudio running
@@ -58,47 +58,77 @@ This small bit of preparation will allow us to move quickly through the basics a
 	- Data types
 	- Data structures
 * How to get help and deal with errors
-* Lab 1: Working with basic data types
 
 
-### Day 2:  The not-so basics
+### [Day 1: Understanding R](day1.html)
+__Monday, September 12, 8:30 am - 11:30 am__
 
-* Continue programming concepts
+* R History
+* Programming concepts
 * Environments
 * How to work with objects: subsetting, indexing, apply functions
 * Other important key R functions including basic statistics
-* Lab 2: Working with dataframes and lists
 
-### Day 3: Practical data management
 
-* dplyr and friends
+### [Day 2: Practical data management, part 1](day2.html)
+__Wednesday, September 14, 9:00 am - 12:00 pm__
+
+* Tidy data
+* Pipes: Ceci n'est pas un pipe
+* Intro to dplyr and tidyr
 * Restructuring data and doing stuff to it
-* Bonus: stringr and regular expressions
-* Lab 3: Get your data into R and do some stuff to it 
+
+### [Day 3: Practical data management, part 2](day3.html)
+
+* Continuing dplyr
+* Regular expressions and stringr
 
 
-### Day 4: Data visualization
+### [Day 4: Data visualization](day4.html)
+__September 15, 9:00 am - 12:00 pm__
 
 * ggplot
 * heatmaps
-* Lab 4: Building up a complex visualization
+* What makes effective visualizations
+* Building up a complex visualization
 
 
-### Day 5: Introduction to Bioconductor
+### [Day 5: Introduction to Bioconductor](day5.html)
+__Monday, September 19, 8:30 am - 11:30 am__
 
 * Finding and installing biocondutor packages
 * Learning what packages do and how to evaluate them
 * Intro to some key data structures: XStringSet, IRanges, expressionset, etc.
-* Lab 5: How do I...?
 
 
-### Day 6:
+### [Day 6: Reproducability and wrapup](day6.html)
 
 * Rapid introduction to managing and reproducing your analysis: Rmarkdown, git and github, best practices
 * Writing your own functions
 * Review and catchup
 
 
-
 ## References
+
+### Some useful sites
+
+* [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
+* [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+* [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/)
+* [Bioconductor Workflows](https://www.bioconductor.org/help/workflows/)
+* [CRAN Task Views](https://cran.r-project.org/web/views/)
+* [UBC STAT 545](http://stat545.com/)
+
+### A few useful blogs
+
+* [Variance Explained](http://varianceexplained.org/)
+* [Getting Genetics Done](http://www.gettinggeneticsdone.com/)
+* [Rstudio's Blog](https://blog.rstudio.org/)
+* [Revolutions](http://blog.revolutionanalytics.com/)
+* [Dean Attali's blog](http://deanattali.com/)
+
+
+## License
+
+Materials are available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.  Basically, use them how you like but you have to give us credit.  See [this](http://software-carpentry.org/license/) Software Carpentry page for a human-readable breakdown of the CC BY 4.0 licence.
 

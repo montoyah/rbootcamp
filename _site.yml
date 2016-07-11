@@ -4,7 +4,17 @@ navbar:
  left:
   - text: "Home"
     href: index.html
-  - text: "Day 1"
+  - text: "Day 0"
     href: day1.html
+  - text: "Day 1"
+    href: day2.html
   - text: "Day 2"
+    href: day2.html
+  - text: "Day 3"
+    href: day2.html
+  - text: "Day 4"
+    href: day2.html
+  - text: "Day 5"
+    href: day2.html
+  - text: "Day 6"
     href: day2.html
