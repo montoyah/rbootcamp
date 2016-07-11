@@ -1,0 +1,21 @@
+---
+title: "References"
+---
+
+## Some useful sites
+
+* [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
+* [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+* [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/)
+* [Bioconductor Workflows](https://www.bioconductor.org/help/workflows/)
+* [CRAN Task Views](https://cran.r-project.org/web/views/)
+* [UBC STAT 545](http://stat545.com/)
+* [R Markdown reference](http://rmarkdown.rstudio.com/)
+
+## A few useful blogs
+
+* [Variance Explained](http://varianceexplained.org/)
+* [Getting Genetics Done](http://www.gettinggeneticsdone.com/)
+* [Rstudio's Blog](https://blog.rstudio.org/)
+* [Revolutions](http://blog.revolutionanalytics.com/)
+* [Dean Attali's blog](http://deanattali.com/)

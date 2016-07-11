@@ -1,20 +1,42 @@
 name: "R Bootcamp"
 navbar:
- title: "UCVM R Bootcamp Materials"
+ title: "UCVM R Bootcamp"
  left:
   - text: "Home"
+    icon: fa-home
     href: index.html
-  - text: "Day 0"
-    href: day1.html
-  - text: "Day 1"
-    href: day2.html
-  - text: "Day 2"
-    href: day2.html
-  - text: "Day 3"
-    href: day2.html
-  - text: "Day 4"
-    href: day2.html
-  - text: "Day 5"
-    href: day2.html
-  - text: "Day 6"
-    href: day2.html
+  - text: "Course Materials"
+    icon: fa-book
+    menu:
+      - text: "Day 0"
+        href: day0.html
+      - text: "Day 1"
+        href: day1.html
+      - text: "Day 2"
+        href: day2.html
+      - text: "Day 3"
+        href: day3.html
+      - text: "Day 4"
+        href: day4.html
+      - text: "Day 5"
+        href: day5.html
+      - text: "Day 6"
+        href: day6.html
+  - text: "References"
+    icon: fa-external-link
+    href: references.html
+  - text: "About"
+    menu:
+      - text: "Who we are"
+        icon: fa-info-circle
+        href: about.html
+      - text: "License"
+        icon: fa-creative-commons
+        href: license-summary.html
+ right:
+  - icon: fa-github fa-2x
+    href: https://github.com/ucvm/rbootcamp
+output:
+  html_document:
+    theme: sandstone
+output_dir: "."

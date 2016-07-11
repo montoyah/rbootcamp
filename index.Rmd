@@ -1,8 +1,5 @@
 ---
-title: "R Bootcamp 2016"
-output:
-  html_document:
-    theme: sandstone
+title: "R Bootcamp for biolgists"
 ---
 
 ## Overview
@@ -79,13 +76,14 @@ __Wednesday, September 14, 9:00 am - 12:00 pm__
 * Restructuring data and doing stuff to it
 
 ### [Day 3: Practical data management, part 2](day3.html)
+__Thursday, September 15, 9:00 am - 12:00 pm__
 
 * Continuing dplyr
 * Regular expressions and stringr
 
 
 ### [Day 4: Data visualization](day4.html)
-__September 15, 9:00 am - 12:00 pm__
+__Monday, September 19, 8:30 am - 11:30 am__
 
 * ggplot
 * heatmaps
@@ -94,7 +92,7 @@ __September 15, 9:00 am - 12:00 pm__
 
 
 ### [Day 5: Introduction to Bioconductor](day5.html)
-__Monday, September 19, 8:30 am - 11:30 am__
+__Wednesday, September 21, 9:00 am - 12:00 pm__
 
 * Finding and installing biocondutor packages
 * Learning what packages do and how to evaluate them
@@ -102,33 +100,13 @@ __Monday, September 19, 8:30 am - 11:30 am__
 
 
 ### [Day 6: Reproducability and wrapup](day6.html)
+__Thursday, September 22, 9:00 am - 12:00 pm__
 
 * Rapid introduction to managing and reproducing your analysis: Rmarkdown, git and github, best practices
 * Writing your own functions
 * Review and catchup
 
 
-## References
-
-### Some useful sites
-
-* [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
-* [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
-* [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/)
-* [Bioconductor Workflows](https://www.bioconductor.org/help/workflows/)
-* [CRAN Task Views](https://cran.r-project.org/web/views/)
-* [UBC STAT 545](http://stat545.com/)
-
-### A few useful blogs
-
-* [Variance Explained](http://varianceexplained.org/)
-* [Getting Genetics Done](http://www.gettinggeneticsdone.com/)
-* [Rstudio's Blog](https://blog.rstudio.org/)
-* [Revolutions](http://blog.revolutionanalytics.com/)
-* [Dean Attali's blog](http://deanattali.com/)
 
 
-## License
-
-Materials are available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.  Basically, use them how you like but you have to give us credit.  See [this](http://software-carpentry.org/license/) Software Carpentry page for a human-readable breakdown of the CC BY 4.0 licence.
 

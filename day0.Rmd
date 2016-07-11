@@ -1,8 +1,5 @@
 ---
 title: "Day 0"
-output:
-  html_document:
-    theme: sandstone
 ---
 
 Materials for Day 0

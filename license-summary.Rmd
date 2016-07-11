@@ -1,0 +1,6 @@
+---
+title: "License"
+---
+
+
+Materials are available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.  Basically, use them how you like but you have to give us credit.  See [this](http://software-carpentry.org/license/) Software Carpentry page for a human-readable breakdown of the CC BY 4.0 licence.
