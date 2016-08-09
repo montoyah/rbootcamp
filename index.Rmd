@@ -42,6 +42,7 @@ Attendees are expected to come with their own laptops and have already installed
  - https://www.datacamp.com/courses/free-introduction-to-r
  - http://tryr.codeschool.com/
  - http://swirlstats.com/
+ - http://rforcats.net/
 
 This small bit of preparation will allow us to move quickly through the basics and get to the good stuff.
 

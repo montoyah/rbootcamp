@@ -2,7 +2,7 @@
 title: "References"
 ---
 
-## Some useful sites
+## Some useful sites (from which I shamelessly stole material for the course)
 
 * [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
 * [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
