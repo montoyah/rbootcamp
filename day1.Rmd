@@ -2,4 +2,52 @@
 title: "Day 1"
 ---
 
-Materials for Day 1
+```{r, message=FALSE, echo=FALSE}
+library(knitr)
+opts_chunk$set(collapse = TRUE)
+```
+
+Outline
+
+* R History
+* Programming concepts
+* Environments
+* How to work with objects: subsetting, indexing, apply functions
+* Other important key R functions including basic statistics
+
+
+## R History
+
+What is R?  
+
+R is calculator
+```
+2 + 2
+```
+NO!! R is a programming languange.  Specifically it's a programming language built for statistics.  And that's what it's best at.
+
+R is a dialect of the S languange.  S was developed by John Chambers at Bell Labs in 1976 and still exists today although hasn't changed much since 1998.  The philosopy behind S (and R) was to allow users to begin in an interactive enviroment that didn't explicitly feel like programming.  Then, as their needs and skills grew they could move into more of the programming aspects.  This helps us understand some of why R is the way it is.
+
+R began life in New Zealand, developed by Ross Ihaka and Robert Gentleman in 1991.  It was made available to the public in 1993 and in 1995 R was licensed with the GNU General Public License, making it free and open-source.  Version 1.0.0 was released in 2000 and the most recent version, 3.3.1 was released on June 21.
+
+### Some key features of R
+
+* R runs on almost all platforms and operating systems.  
+* The core is quite lean - most funcionality is found in modular packages.
+* Very powerful graphics and statistics capabilities
+* Actively developed and a very active user community
+
+
+
+## Programming concepts
+
+### Variables / Objects
+
+### Functions
+
+### Conditionals
+
+#### If/Else
+
+#### While
+

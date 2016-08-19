@@ -19,7 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <link rel="stylesheet"
@@ -95,6 +94,7 @@ button.code-folding-btn:focus {
 }
 </style>
 
+
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
@@ -151,7 +151,7 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="site_libs/navigation-1.0/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -268,7 +268,227 @@ $(document).ready(function () {
 </div>
 
 
-<p>Materials for Day 0</p>
+<div id="data-structures" class="section level2">
+<h2>Data structures</h2>
+<p>In any programming language, all data structures are built from the ground up using basic building blocks. In R, the most frequently used are logical, integer, double (numeric), and character. From these we build increasingly complex data structures, adapted to hold whatever type of data we are interested in.</p>
+<div id="vectors" class="section level3">
+<h3>Vectors</h3>
+<p>Let’s start with vectors, the most of R’s data structures.</p>
+<div id="atomic-vectors" class="section level4">
+<h4>Atomic vectors</h4>
+<p>Atomic vectors are 1-dimensional data structures that must be all the same type</p>
+<pre class="r"><code># Logical
+logical_vector = c(TRUE, FALSE, TRUE)
+
+# Integer
+int_vector = c(1L, 3L, 6L)
+
+# Double
+num_vector = c(3.4, 493.22, 239992.229)
+
+# Character
+char_vector = c(&quot;Do&quot;, &quot;you&quot;, &quot;love&quot;, &quot;cats&quot;, &quot;?&quot;)</code></pre>
+<p>A couple of points on atomic vectors:</p>
+<ul>
+<li>They are constructed using the <code>c()</code> function</li>
+<li>To specify an integer use the L suffix</li>
+<li>A vector must be the all the same type</li>
+<li>Use <code>typeof()</code> to see what type you have or an “is” function to check type</li>
+</ul>
+<pre class="r"><code>typeof(int_vector)
+## [1] &quot;integer&quot;
+
+is.character(char_vector)
+## [1] TRUE
+
+is.numeric(logical_vector)
+## [1] FALSE</code></pre>
+</div>
+<div id="lists" class="section level4">
+<h4>Lists</h4>
+<p>A list is like an atomic vector but each item in the list can be any type, including other lists, atomic vectors, data frames, or matrices. Use <code>list()</code> to make a list.</p>
+<pre class="r"><code>my_list = list(&quot;meow&quot;, 12, c(4, 5, 10), logical_vector, list(&quot;I have 10 cats&quot;, FALSE))
+
+str(my_list)
+## List of 5
+##  $ : chr &quot;meow&quot;
+##  $ : num 12
+##  $ : num [1:3] 4 5 10
+##  $ : logi [1:3] TRUE FALSE TRUE
+##  $ :List of 2
+##   ..$ : chr &quot;I have 10 cats&quot;
+##   ..$ : logi FALSE</code></pre>
+<p>Lists are very powerful and although confusing at first it is worth spending time learning how to use them. In particular when we come to the “apply” family of functions we will see how lists can make our lives much easier.</p>
+</div>
+</div>
+<div id="factors" class="section level3">
+<h3>Factors</h3>
+<p>Ah, the dreaded factors! They are used to store categorical variables and although it is tempting to think of them as character vectors this is a dangerous mistake (you will get scratched, badly!). Factors make perfect sense if you are a statician designing a programming language (!) but to everyone else they exist soley to torment us with confusing errors.</p>
+<p>A factor is really just an integer vector with an additional attribute, <code>levels()</code>, which defines the possible values.</p>
+<pre class="r"><code>crazy_factor = factor(c(&quot;up&quot;, &quot;down&quot;, &quot;down&quot;, &quot;sideways&quot;, &quot;up&quot;))
+
+print(crazy_factor)
+## [1] up       down     down     sideways up      
+## Levels: down sideways up
+
+levels(crazy_factor)
+## [1] &quot;down&quot;     &quot;sideways&quot; &quot;up&quot;
+
+as.integer(crazy_factor)
+## [1] 3 1 1 2 3</code></pre>
+<p>But why not just use character vectors, you ask? Believe it or not factor do have some useful properties. For example factors allow you to specify all possible values a variable may take even if those values are not in your dataset.</p>
+<pre class="r"><code>cool_animals = c(&quot;cat&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;dog&quot;)
+
+cool_animals_factor = factor(cool_animals, levels = c(&quot;cat&quot;, &quot;dog&quot;, &quot;bunny&quot;))
+
+table(cool_animals_factor)
+## cool_animals_factor
+##   cat   dog bunny 
+##     2     2     0</code></pre>
+<p>But for the most part factors are important for various statistics involving categorical variables, as you’ll see for things like linear models. Love ’em or hate ’em, factors are integral to using R so better learn ’em.</p>
+</div>
+<div id="matrices" class="section level3">
+<h3>Matrices</h3>
+<p>A matrix is a 2-dimensional vector and like atomic vector must be all of a single type.</p>
+<pre class="r"><code>mat = matrix(1:12, ncol = 4, nrow = 3)
+
+print(mat)
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+
+nrow(mat)
+## [1] 3
+
+ncol(mat)
+## [1] 4</code></pre>
+<p>Matrices can have row and column names</p>
+<pre class="r"><code>colnames(mat) = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
+
+rownames(mat) = c(&quot;cat&quot;, &quot;tiger&quot;, &quot;lion&quot;)
+
+print(mat)
+##       A B C  D
+## cat   1 4 7 10
+## tiger 2 5 8 11
+## lion  3 6 9 12</code></pre>
+</div>
+<div id="data-frames" class="section level3">
+<h3>Data frames</h3>
+<p>And now for the finale - data frames! Data frames are very powerful data structures in R and will play a central role in most of the work you’ll do. These are probably the most familiar data structures to most people as they resemble spreadsheets quite closely, at least on the surface.</p>
+<p>You can think of data frame as a set of identically sized lists lined up together in columns with a few key features. Each column must be of the same type but column types can be any of the basic data types (character, integer, etc). This makes them very useful for structured heterogeneus data, like what many of you generate in the lab everyday. However, it is very important to remember that they are not spreadsheets and to use them effectively you need to forget everything you’ve learned about Excel (which is probably a good idea anyway).</p>
+<pre class="r"><code># here let&#39;s use a data frame that comes built in to R
+head(iris)
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+
+str(iris)
+## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Notice the <code>$</code> notation, similar to what we saw for lists. We can use this to extract singe columns.</p>
+<pre class="r"><code>iris$Sepal.Length
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4
+##  [18] 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5
+##  [35] 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0
+##  [52] 6.4 6.9 5.5 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8
+##  [69] 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4
+##  [86] 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8
+## [103] 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7
+## [120] 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7
+## [137] 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
+<p>Alternitivaly,</p>
+<pre class="r"><code>iris[[&quot;Sepal.Length&quot;]]
+##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4
+##  [18] 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5
+##  [35] 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0
+##  [52] 6.4 6.9 5.5 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8
+##  [69] 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4
+##  [86] 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8
+## [103] 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7
+## [120] 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7
+## [137] 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
+<p>And now for some basic indexing.</p>
+<pre class="r"><code># get the first 3 rows of the last 2 columns
+iris[1:3, 4:5]
+##   Petal.Width Species
+## 1         0.2  setosa
+## 2         0.2  setosa
+## 3         0.2  setosa
+
+# get the 10th row of the &#39;Petal.Width&#39; column
+iris[10, &quot;Petal.Width&quot;]
+## [1] 0.1
+
+# get the entire 4th row
+iris[4, ]
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 4          4.6         3.1          1.5         0.2  setosa</code></pre>
+<p>We’ll do more indexing in the next session but for now here a couple of key points about indexing.</p>
+<ul>
+<li>The square brackets <code>[]</code> are used to index</li>
+<li>Row is first then column <code>[row, column]</code></li>
+<li>Rows and columns can be indexed by names, with a character vector, although you’ll see this much more commonly for columns, rather than rows.</li>
+<li>When indexing by integer, you can use a single value <code>3</code>, a vector <code>c(1, 3, 8)</code>, or a range <code>2:10</code>.</li>
+<li>Indexing in R starts at 1. This is different than most programming languages such as python where indexing begins at 0. For those new to programming this makes more sense but those with programming experience may find this frustrating.</li>
+</ul>
+</div>
+</div>
+<div id="how-to-get-help-and-deal-with-errors" class="section level2">
+<h2>How to get help and deal with errors</h2>
+<div id="google-it" class="section level3">
+<h3><strong>GOOGLE IT!!!</strong></h3>
+<p>If you email me with an error I haven’t seen, the first thing I will do is google it. If you go ahead and post a question on a forum when an easy answer can be found by googling don’t be surprised for an unpleasent response.</p>
+<p>But sometimes an easy answer can’t be found so here’s a quick process to walk through:</p>
+<ol style="list-style-type: decimal">
+<li>Re-read the error and then think about it for a minute. See if you can’t get a grasp on what’s really going wrong.</li>
+<li>Check your code for errors. Spelling errors, misplaced commas, forgotten paranthesis can all cause problems</li>
+<li>Look it up - I very, very rarely get an error that someone else hasn’t seen before.</li>
+<li>If you still can’t find a solution then you can ask for help. Make friends in this class - get an R buddy. I can answer brief questions or you can post questions online at StackOverflow. Sometimes package developers have specific discussion groups on Google groups or Github. These can be very useful.</li>
+</ol>
+<p>To get you started here are few of the more common errors you might see:</p>
+<p>Think about what is going wrong for each of these.</p>
+<pre class="r"><code>my_object
+## Error in eval(expr, envir, enclos): object &#39;my_object&#39; not found</code></pre>
+<p>Hint: Type <code>ls()</code></p>
+<pre class="r"><code>iris[, 6]
+## Error in `[.data.frame`(iris, , 6): undefined columns selected</code></pre>
+<p>Hint: How many columns does the <code>iris</code> data frame have?</p>
+<pre class="r"><code>sample[1:10,]
+## Error in sample[1:10, ]: object of type &#39;closure&#39; is not subsettable</code></pre>
+<p>Hint: What does <code>typeof(sample)</code> give you?</p>
+<pre class="r"><code>mat[4, 2]
+## Error in mat[4, 2]: subscript out of bounds</code></pre>
+<p>Hint: What are the dimensions (<code>dim()</code>) of <code>mat</code>?</p>
+<pre class="r"><code>pet_a_cat()
+## Error in eval(expr, envir, enclos): could not find function &quot;pet_a_cat&quot;</code></pre>
+<p>Hint: This one is pretty self-explanatory</p>
+<pre class="r"><code>nothing = NA
+if (nothing == NA) {
+    print(&quot;empty&quot;)
+}
+## Error in if (nothing == NA) {: missing value where TRUE/FALSE needed</code></pre>
+<p>Hint: What does <code>nothing == NA</code> give you? How about <code>is.na(nothing)</code>?</p>
+<pre class="r"><code>my_data = read.table(&quot;mydata.txt&quot;)
+## Warning in file(file, &quot;rt&quot;): cannot open file &#39;mydata.txt&#39;: No such file or
+## directory
+## Error in file(file, &quot;rt&quot;): cannot open the connection</code></pre>
+<p>Hint: Read the error message carefully.</p>
+<pre class="r"><code>x = data.frame(y = NULL)
+x$y = 1:4
+## Error in `$&lt;-.data.frame`(`*tmp*`, &quot;y&quot;, value = 1:4): replacement has 4 rows, data has 0</code></pre>
+<p>Hint: How many rows does <code>x</code> have?</p>
+</div>
+</div>
 
 
 
@@ -281,6 +501,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 
