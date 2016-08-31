@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -98,34 +98,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 41px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 </style>
 
@@ -268,7 +268,388 @@ $(document).ready(function () {
 </div>
 
 
-<p>Materials for Day 1</p>
+<p>Outline</p>
+<ul>
+<li>R History</li>
+<li>Programming concepts</li>
+<li>Environments</li>
+<li>How to work with objects: subsetting, indexing, apply functions</li>
+<li>Other important key R functions including basic statistics</li>
+</ul>
+<div id="r-history" class="section level2">
+<h2>R History</h2>
+<p>What is R?</p>
+<p>R is calculator</p>
+<pre><code>2 + 2</code></pre>
+<p>NO!! R is a programming languange. Specifically it’s a programming language built for statistics. And that’s what it’s best at.</p>
+<p>R is a dialect of the S languange. S was developed by John Chambers at Bell Labs in 1976 and still exists today although hasn’t changed much since 1998. The philosopy behind S (and R) was to allow users to begin in an interactive enviroment that didn’t explicitly feel like programming. Then, as their needs and skills grew they could move into more of the programming aspects. This helps us understand some of why R is the way it is.</p>
+<p>R began life in New Zealand, developed by Ross Ihaka and Robert Gentleman in 1991. It was made available to the public in 1993 and in 1995 R was licensed with the GNU General Public License, making it free and open-source. Version 1.0.0 was released in 2000 and the most recent version, 3.3.1 was released on June 21.</p>
+<div id="some-key-features-of-r" class="section level3">
+<h3>Some key features of R</h3>
+<ul>
+<li>R runs on almost all platforms and operating systems.<br />
+</li>
+<li>It’s free</li>
+<li>The core is quite lean - most funcionality is found in modular packages.</li>
+<li>Very powerful graphics and statistics capabilities</li>
+<li>Actively developed and a very active user community</li>
+<li>Rich and robust package repository (CRAN and Bioconductor)</li>
+<li>Excellent interactive capabilities - good for rapid development and data analysis</li>
+</ul>
+</div>
+</div>
+<div id="packages" class="section level2">
+<h2>Packages</h2>
+<p>Packages are simply bits of code, external to the core R code that are designed to perform a specific function. The vast majority of the usefulness and functionality of R resides in packages. These packages live in online repositories and can be installed on your own system to be used.</p>
+<p>R has a well defined system of packages, requiring package authors to document well and test installation thouroughly. This means that <em>most</em> packages will install easily on any system. For most R packages the central repository is CRAN (The Comprehensive R Archive Network), however, most bioinformatic packages live in another repository called Biocondcutor. Dispite differences in content and appearances, these essentially function in the same way.</p>
+<div id="installing-packages" class="section level3">
+<h3>Installing packages</h3>
+<p>Packages need only be installed once, although you may have to reinstall when upgrading R or when you want to use a newer version of a package.</p>
+<p>To install from CRAN all one needs to do is:</p>
+<pre><code>install.packages(&quot;dplyr&quot;)</code></pre>
+<p>If you’re not using RStudio then you may be asked to select a mirror. Just choose the location geographically closest to you.</p>
+<p>Bioconductor is slightly different - we’ll cover that in more detail in a later session.</p>
+</div>
+<div id="using-packages" class="section level3">
+<h3>Using packages</h3>
+<p>Once installed all the functions in a package are available to be used.</p>
+<pre class="r"><code>dplyr::glimpse(iris)
+## Observations: 150
+## Variables: 5
+## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9,...
+## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1,...
+## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5,...
+## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1,...
+## $ Species      &lt;fctr&gt; setosa, setosa, setosa, setosa, setosa, setosa, ...</code></pre>
+<p>Here the name of the package is provide followed by two colons and then the name of the function you want to use. The <code>::</code> loads the package into memory and allows you to access all of the functions.</p>
+<p>However, this can get tedious typing out the package name everytime so R provides a function <code>library()</code> used to attach packages. The library function first loads then “attaches” the package. Basically this means you can now use functions from a package without typing the package names. Packages are attached in your current session and need to be attached every time you start a new session. Technically what is happening here is that when attaching a package R puts those functions in your search path, the place R looks first for objects and functions.</p>
+<pre class="r"><code>search()
+##  [1] &quot;.GlobalEnv&quot;        &quot;package:knitr&quot;     &quot;package:stats&quot;    
+##  [4] &quot;package:graphics&quot;  &quot;package:grDevices&quot; &quot;package:utils&quot;    
+##  [7] &quot;package:datasets&quot;  &quot;package:methods&quot;   &quot;Autoloads&quot;        
+## [10] &quot;package:base&quot;
+library(&quot;dplyr&quot;)
+## 
+## Attaching package: &#39;dplyr&#39;
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+search()
+##  [1] &quot;.GlobalEnv&quot;        &quot;package:dplyr&quot;     &quot;package:knitr&quot;    
+##  [4] &quot;package:stats&quot;     &quot;package:graphics&quot;  &quot;package:grDevices&quot;
+##  [7] &quot;package:utils&quot;     &quot;package:datasets&quot;  &quot;package:methods&quot;  
+## [10] &quot;Autoloads&quot;         &quot;package:base&quot;
+
+glimpse(iris)
+## Observations: 150
+## Variables: 5
+## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9,...
+## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1,...
+## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5,...
+## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1,...
+## $ Species      &lt;fctr&gt; setosa, setosa, setosa, setosa, setosa, setosa, ...</code></pre>
+<p>There is some confusion on why they are called packages but you used the <code>library()</code> function to attach them. The correct terminology here is that individual packages are stored in your ‘library’. You use the <code>library()</code> function to load and attach a package <em>from</em> your library.</p>
+</div>
+<div id="namespaces" class="section level3">
+<h3>Namespaces</h3>
+<p>An important concept to be aware of when using packages is namespaces. Given the thousands of packages available it is quite likely that function names will overlap. If two functions have the same name and both are attached, R will by default use the one attached most recently. You can see this by looking at the order of the packages in the search path <code>search()</code> function.</p>
+<p>To avoid problems and bizzare errors you can specify which function to use by using the <code>::</code> notation as above to explicity indicate which function you’d like to use.</p>
+<p>Pro tip: If your getting strange errors from a function that previously worked fine try typing <code>?function_name</code>. In RStudio if there are multiple functions attached with the same name then the help window will give you links for both functions and the one at the top of the list is the one R uses by default.</p>
+</div>
+</div>
+<div id="programming-concepts" class="section level2">
+<h2>Programming concepts</h2>
+<p>R is a programming language and in order to use it effectivly it is important to understand some basic programming concepts.</p>
+<div id="variables-objects" class="section level3">
+<h3>Variables / Objects</h3>
+<p>Think of a variable (also called objects) as container to hold a value. Containers are defined to hold specific types of values and we can give the informative names. These are the data types that we talked about in the last lesson. They can also be abitrarily complex. For example a DESeq object, used in analzying RNA-seq data contains the expression data, additional annotations on the genes, sample data, experiment details and results from any statistics run.</p>
+<p>Objects are used to structure data and reduce repetition. They are passed to functions and can be modified.</p>
+<pre class="r"><code>x = 2
+y = c(1,2,3)
+
+x + y
+## [1] 3 4 5
+
+sum(x,y)
+## [1] 8</code></pre>
+</div>
+<div id="functions" class="section level3">
+<h3>Functions</h3>
+<p>A function is a small bit of code designed to perform a single task over and over. Given a set of inputs a well designed function takes those, performs a pre-defined, single task and returns some type of output.</p>
+<p>Functions are first-class citizens in R. They are used extensively, can be passed as parameters to other functions and functions can return other functions as output.</p>
+<p>Most functions you use will be either base R functions (functions that are a part of the core R language) or functions defined by external packages. However, defining your own functions in R is very easy and can be very helpful to reduce repetition and mistakes in your analysis.</p>
+<pre class="r"><code># base functions
+seq(1:5)
+## [1] 1 2 3 4 5
+sum(c(2, 39, 22))
+## [1] 63
+
+# parameters are given using a single &#39;=&#39;
+x = rnorm(n = 100, mean = 35, sd = 2)
+
+# but they don&#39;t have to be named as long as you give them in the right order
+y = rnorm(100, 46, 1.5)
+plot(x, y)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>
+# functions can be nested
+print(paste(&quot;The mean of the x vector is&quot;, round(mean(x))))
+## [1] &quot;The mean of the x vector is 35&quot;
+
+# a simple function of our own devising
+say_hello = function(name) {
+    say = paste(&quot;Hello&quot;, name)
+    print(say)
+}
+
+say_hello(&quot;Matthew&quot;)
+## [1] &quot;Hello Matthew&quot;</code></pre>
+</div>
+<div id="conditionals" class="section level3">
+<h3>Conditionals</h3>
+<p>Programming is often about making choices; if this then that. This is how we can control the program flow based on things like user input, features of our data, or the output of another function or program.</p>
+<p>There are a number of ways to control program flow in R but the most common is an if/else statment so we’ll focus on that one.</p>
+<div id="ifelse" class="section level4">
+<h4>If/Else</h4>
+<p>There are two main parts to an if statement. The part where we make the decision (if) and then the code following the if statement that is excuted when the if statment is true.</p>
+<pre class="r"><code>cats = &quot;cool&quot;
+
+if (cats == &quot;cool&quot;) {
+    print(&quot;You know it!&quot;)
+}
+## [1] &quot;You know it!&quot;</code></pre>
+<p>Note the syntax here: Double equals (==) to signify comparision instead of assignment and the use of curly brackets to indicate the code we run when the if statement is true.</p>
+<p>Adding an else statement allows to define code to run when the if statement is false.</p>
+<pre class="r"><code>cats = &quot;uncool&quot;
+
+if (cats == &quot;cool&quot;) {
+    print(&quot;You know it!&quot;)
+} else {
+    print(&quot;Whaaat?!&quot;)
+}
+## [1] &quot;Whaaat?!&quot;</code></pre>
+<p>If statements can be nested:</p>
+<pre class="r"><code>dogs = &quot;cool&quot;
+
+if (cats == &quot;cool&quot;) {
+    print(&quot;You know it!&quot;)
+} else if (dogs == &quot;cool&quot; ) {
+    print(&quot;Phew, I was worried about you there.&quot;)
+} else {
+    print(&quot;Whaaat?!&quot;)
+}
+## [1] &quot;Phew, I was worried about you there.&quot;</code></pre>
+<p>This can be a good way to choose from a list options but be careful about nests, within nests, within nests.</p>
+</div>
+<div id="logical-operators" class="section level4">
+<h4>Logical operators</h4>
+<p>Any statement that returns a TRUE or FALSE can be used in an if statement.</p>
+<pre class="r"><code>3 + 2 == 4
+## [1] FALSE
+
+any(is.na(x))
+## [1] FALSE
+
+some_values = c(1,2,3,4)
+3 %in% some_values
+## [1] TRUE
+
+# The %in% function retuns TRUE or FALSE for every value on the left-hand side depending on if a match is found
+# on the right hand side.  This can be useful for if statements but only if it returns a single TRUE/FALSE
+
+test_values = c(0,3,5)
+if (test_values %in% some_values) {
+    print(&quot;Yup&quot;)
+}
+## Warning in if (test_values %in% some_values) {: the condition has length &gt;
+## 1 and only the first element will be used
+
+test_values %in% some_values
+## [1] FALSE  TRUE FALSE</code></pre>
+<p>Here are some common logical operators that can be used in an if statement.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>greather than or equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>exactly equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>not equal to</td>
+</tr>
+<tr class="odd">
+<td>!x</td>
+<td>not x</td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>y</td>
+</tr>
+<tr class="odd">
+<td>x &amp; y</td>
+<td>x AND y</td>
+</tr>
+<tr class="even">
+<td>isTRUE(x)</td>
+<td>test if x is TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="environments" class="section level2">
+<h2>Environments</h2>
+<p>What is an environment?</p>
+</div>
+<div id="how-to-work-with-objects-subsetting-indexing-apply-functions" class="section level2">
+<h2>How to work with objects: subsetting, indexing, apply functions</h2>
+<div id="subsetting" class="section level3">
+<h3>Subsetting</h3>
+</div>
+<div id="indexing" class="section level3">
+<h3>Indexing</h3>
+</div>
+<div id="iterating-over-an-object" class="section level3">
+<h3>Iterating over an object</h3>
+<div id="loops" class="section level4">
+<h4>Loops</h4>
+</div>
+<div id="apply-functions" class="section level4">
+<h4>Apply functions</h4>
+</div>
+</div>
+</div>
+<div id="other-important-key-r-functions" class="section level2">
+<h2>Other important key R functions</h2>
+<div id="generating-and-manipulating-sequences" class="section level3">
+<h3>Generating and manipulating sequences</h3>
+<pre class="r"><code>seq(1,10)
+##  [1]  1  2  3  4  5  6  7  8  9 10
+
+seq(1, 20, by = 2)
+##  [1]  1  3  5  7  9 11 13 15 17 19
+
+seq(from = 2, by = 2.5, length.out = 10)
+##  [1]  2.0  4.5  7.0  9.5 12.0 14.5 17.0 19.5 22.0 24.5
+
+rep(2, 3)
+## [1] 2 2 2
+
+rep(1:3, 4)
+##  [1] 1 2 3 1 2 3 1 2 3 1 2 3
+
+rep(1:3, each = 2)
+## [1] 1 1 2 2 3 3
+
+rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;), each = 6)
+##  [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;
+## [18] &quot;C&quot;</code></pre>
+<pre class="r"><code>normal_dist = rnorm(n = 1e6, mean = 2, sd = 1.2)
+hist(normal_dist, main = &quot;A normal distribution&quot;)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>
+uniform_dist = runif(n = 1e6, min = 10, max = 20)
+hist(uniform_dist, main = &quot;A uniform distribution&quot;)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+</div>
+<div id="basic-statistics" class="section level3">
+<h3>Basic statistics</h3>
+<pre class="r"><code>set.seed(3823)
+
+x = sample(1:1000, size = 50, replace = TRUE)
+
+max(x)
+## [1] 982
+
+min(x)
+## [1] 4
+
+range(x)
+## [1]   4 982
+
+mean(x)
+## [1] 511.7
+
+median(x)
+## [1] 511
+
+sum(x)
+## [1] 25585
+
+sd(x)
+## [1] 265.8911
+
+y = rnorm(x, 1, 0.2 * x) + x
+plot(x,y)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>
+var(x)
+## [1] 70698.09
+
+cor(x,y)
+## [1] 0.9351317</code></pre>
+<pre class="r"><code>my_model = lm(y ~ x)
+
+print(my_model)
+## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Coefficients:
+## (Intercept)            x  
+##     -36.125        1.121
+
+summary(my_model)
+## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -278.58  -50.71    9.29   53.68  326.62 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -36.1253    35.2760  -1.024    0.311    
+## x             1.1210     0.0613  18.286   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 114.1 on 48 degrees of freedom
+## Multiple R-squared:  0.8745, Adjusted R-squared:  0.8719 
+## F-statistic: 334.4 on 1 and 48 DF,  p-value: &lt; 2.2e-16
+
+plot(x, y, main = &quot;Linear model&quot;)
+abline(my_model, col = &quot;red&quot;)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+</div>
 
 
 

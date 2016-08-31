@@ -1,21 +1,28 @@
 ---
-title: "Day 0"
+title: "R Bootcamp Day 0"
+date: September 8, 2016
+output: 
+  revealjs::revealjs_presentation:
+    theme: "white"
+    transition: "fade"
+    center: false
+    incremental: true
 ---
 
 ```{r, message=FALSE, echo=FALSE}
 library(knitr)
-opts_chunk$set(collapse = TRUE)
+opts_chunk$set(collapse = TRUE, tidy = TRUE)
 ```
 
 ## Data structures
 
-In any programming language, all data structures are built from the ground up using basic building blocks.  In R, the most frequently used are logical, integer, double (numeric), and character.  From these we build increasingly complex data structures, adapted to hold whatever type of data we are interested in.
+* In any programming language, all data structures are built from the ground up using basic building blocks.  
+* In R, the most frequently used are logical, integer, double (numeric), and character.  
+* From these we build increasingly complex data structures, adapted to hold whatever type of data we are interested in.
+* Let's start with vectors, the most common of R's data structures.
 
-## Vectors
 
-Let's start with vectors, the most of R's data structures.
-
-#### Atomic vectors
+## Atomic vectors
 
 Atomic vectors are 1-dimensional data structures that must be all the same type
 
@@ -34,6 +41,8 @@ char_vector = c("Do", "you", "love", "cats", "?")
 
 ```
 
+---
+
 A couple of points on atomic vectors:
 
 * They are constructed using the `c()` function
@@ -50,7 +59,7 @@ is.numeric(logical_vector)
 ```
 
 
-#### Lists
+## Lists
 
 A list is like an atomic vector but each item in the list can be any type, including other lists, atomic vectors, data frames, or matrices. Use `list()` to make a list.
 
@@ -59,11 +68,20 @@ my_list = list("meow", 12, c(4, 5, 10), logical_vector, list("I have 10 cats", F
 
 str(my_list)
 ```
-Lists are very powerful and although confusing at first it is worth spending time learning how to use them.  In particular when we come to the "apply" family of functions we will see how lists can make our lives much easier.
 
-### Factors
+---
 
-Ah, the dreaded factors!  They are used to store categorical variables and although it is tempting to think of them as character vectors this is a dangerous mistake (you will get scratched, badly!).  Factors make perfect sense if you are a statician designing a programming language (!) but to everyone else they exist soley to torment us with confusing errors.  
+Lists are very powerful and although confusing at first it is worth spending time learning how to use them.    
+
+In particular when we come to the "apply" family of functions we will see how lists can make our lives much easier.
+
+## Factors
+
+* Ah, the dreaded factors!  
+* They are used to store categorical variables and although it is tempting to think of them as character vectors this is a dangerous mistake (you will get scratched, badly!).  
+* Factors make perfect sense if you are a statician designing a programming language (!) but to everyone else they exist soley to torment us with confusing errors.  
+
+---
 
 A factor is really just an integer vector with an additional attribute, `levels()`, which defines the possible values.
 
@@ -76,6 +94,9 @@ levels(crazy_factor)
 
 as.integer(crazy_factor)
 ```
+
+---
+
 But why not just use character vectors, you ask?  Believe it or not factor do have some useful properties.  For example factors allow you to specify all possible values a variable may take even if those values are not in your dataset.
 
 ```{r}
@@ -87,9 +108,11 @@ table(cool_animals_factor)
 
 ```
 
+---
+
 But for the most part factors are important for various statistics involving categorical variables, as you'll see for things like linear models.  Love 'em or hate 'em, factors are integral to using R so better learn 'em.
 
-### Matrices
+## Matrices
 
 A matrix is a 2-dimensional vector and like atomic vector must be all of a single type.
 
@@ -103,6 +126,8 @@ nrow(mat)
 ncol(mat)
 ```
 
+---
+
 Matrices can have row and column names
 
 ```{r}
@@ -114,11 +139,16 @@ print(mat)
 ```
 
 
-### Data frames
+## Data frames
 
-And now for the finale - data frames!  Data frames are very powerful data structures in R and will play a central role in most of the work you'll do.  These are probably the most familiar data structures to most people as they resemble spreadsheets quite closely, at least on the surface.
+* Data frames are very powerful data structures in R and will play a central role in most of the work you'll do.  
+* These are probably the most familiar data structures to most people as they resemble spreadsheets quite closely, at least on the surface.
+* You can think of data frame as a set of identically sized lists lined up together in columns with a few key features.  
+	 - Each column must be of the same type but column types can be any of the basic data types (character, integer, etc).  
+	 - This makes them very useful for structured heterogeneus data, like what many of you generate in the lab everyday.  
+	 - However, it is very important to remember that they are not spreadsheets and to use them effectively you need to forget everything you've learned about Excel (which is probably a good idea anyway).
 
-You can think of data frame as a set of identically sized lists lined up together in columns with a few key features.  Each column must be of the same type but column types can be any of the basic data types (character, integer, etc).  This makes them very useful for structured heterogeneus data, like what many of you generate in the lab everyday.  However, it is very important to remember that they are not spreadsheets and to use them effectively you need to forget everything you've learned about Excel (which is probably a good idea anyway).
+---
 
 ```{r}
 # here let's use a data frame that comes built in to R
@@ -127,8 +157,9 @@ head(iris)
 str(iris)
 ```
 
-Notice the `$` notation, similar to what we saw for lists.  We can use this to extract singe columns.
+---
 
+Notice the `$` notation, similar to what we saw for lists.  We can use this to extract singe columns.
 
 ```{r}
 iris$Sepal.Length
@@ -139,6 +170,8 @@ Alternitivaly,
 ```{r}
 iris[["Sepal.Length"]]
 ```
+
+---
 
 And now for some basic indexing.
 
@@ -153,6 +186,8 @@ iris[10, "Petal.Width"]
 iris[4, ]
 ```
 
+---
+
 We'll do more indexing in the next session but for now here a couple of key points about indexing.  
 
 * The square brackets `[]` are used to index
@@ -164,27 +199,35 @@ We'll do more indexing in the next session but for now here a couple of key poin
 
 ## How to get help and deal with errors
 
-### Where to get help
+## Built-in help
 
-#### Built-in help
-
-R-package authors are required to document their functions although this happens at a various levels of usefulness.  Simply type `?function_name` to get help on a function. Type `??function` to do a fuzzy search.  Look carefully what parameters the function requires and what type they are.  Some are required (listed first, no default) and some are optional (a default value is usually listed).  Most function help will also indicate what the function returns.  Good documentation also has more information on what the function is doing.
+* R-package authors are required to document their functions although this happens at a various levels of usefulness.  
+* Simply type `?function_name` to get help on a function. 
+* Type `??function` to do a fuzzy search.  Look carefully what parameters the function requires and what type they are.  
+* Some are required (listed first, no default) and some are optional (a default value is usually listed).  
+* Most function help will also indicate what the function returns.  
+* Good documentation also has more information on what the function is doing.
 
 Package manuals (required for both CRAN and Bioconductor) are all of these function help pages gathered together in one place.
 
-#### Vignettes
+## Vignettes
 
-Vignettes (required for Bioconductor packages, but not CRAN) are longer form documentation usually in the form of a tutorial or example usage.  These can be extremely helpful and are usually the best place to start when working with a new package.  For example the limma (linear models for microarrays) vignette is a small book and an excellent resource on learning how to analyze micorarrays (and RNA-seq).  Vignettes can be found by typing `browseVignettes("packageName")` in your console or on the Bioconductor web page for a package. 
+* Vignettes (required for Bioconductor packages, but not CRAN) are longer form documentation usually in the form of a tutorial or example usage.  
+* These can be extremely helpful and are usually the best place to start when working with a new package.  
+	- For example the limma (linear models for microarrays) vignette is a small book and an excellent resource on learning how to analyze micorarrays (and RNA-seq).  
+* Vignettes can be found by typing `browseVignettes("packageName")` in your console or on the Bioconductor web page for a package. 
 
-#### Elsewhere
+## Elsewhere
 
 Sometimes authors will provide more detailed documenation online.  This is more common for more recent packages where the authors may have a github repository and associated webpage.  Often discussion pages (Google groups, Github) can also be a useful source of helpt
 
-### Errors
+## Errors
 
-#### __GOOGLE IT!!!__
+*  __GOOGLE IT!!!__
+* If you email me with an error I haven't seen, the first thing I will do is google it.  
+* If you go ahead and post a question on a forum when an easy answer can be found by googling don't be surprised for an unpleasent response.
 
-If you email me with an error I haven't seen, the first thing I will do is google it.  If you go ahead and post a question on a forum when an easy answer can be found by googling don't be surprised for an unpleasent response.
+--- 
 
 But sometimes an easy answer can't be found so here's a quick process to walk through:
 
@@ -193,40 +236,53 @@ But sometimes an easy answer can't be found so here's a quick process to walk th
 3.  Look it up - I very, very rarely get an error that someone else hasn't seen before.
 4.  If you still can't find a solution then you can ask for help.  Make friends in this class - get an R buddy.  I can answer brief questions or you can post questions online at StackOverflow.  Sometimes package developers have specific discussion groups on Google groups or Github.  These can be very useful.
 
+---
+
 To get you started here are few of the more common errors you might see:
 
 Think about what is going wrong for each of these.  
 
+---
 
 ```{r, error=TRUE}
 my_object
 ```
+  
 Hint: Type `ls()`
 
+---
 
 ```{r, error=TRUE}
 iris[, 6]
 ```
+  
 Hint:  How many columns does the `iris` data frame have?
 
+---
 
 ```{r, error=TRUE}
 sample[1:10,]
 ```
+  
 Hint:  What does `typeof(sample)` give you? What about `sample(10)`?  Or `?sample`
 
+---
 
 ```{r, error=TRUE}
 mat[4, 2]
 ```
+
 Hint: What are the dimensions (`dim()`) of `mat`?
 
+---
 
 ```{r, error=TRUE}
 pet_a_cat()
 ```
+
 Hint:  This one is pretty self-explanatory
 
+---
 
 ```{r, error=TRUE}
 nothing = NA
@@ -234,18 +290,23 @@ if (nothing == NA) {
 	print("empty")
 }
 ```
+
 Hint:  What does `nothing == NA` give you?  How about `is.na(nothing)`?
 
+---
 
 ```{r, error=TRUE}
 my_data = read.table("mydata.txt")
 ```
+
 Hint: Read the error message carefully.
 
+---
 
 ```{r, error=TRUE}
 x = data.frame(y = NULL)
 x$y = 1:4
 ```
+
 Hint: How many rows does `x` have?
 

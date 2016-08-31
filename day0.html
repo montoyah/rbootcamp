@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -98,34 +98,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 41px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 46px;
+  margin-top: -46px;
 }
 </style>
 
@@ -271,8 +271,9 @@ $(document).ready(function () {
 <div id="data-structures" class="section level2">
 <h2>Data structures</h2>
 <p>In any programming language, all data structures are built from the ground up using basic building blocks. In R, the most frequently used are logical, integer, double (numeric), and character. From these we build increasingly complex data structures, adapted to hold whatever type of data we are interested in.</p>
-<div id="vectors" class="section level3">
-<h3>Vectors</h3>
+</div>
+<div id="vectors" class="section level2">
+<h2>Vectors</h2>
 <p>Let’s start with vectors, the most of R’s data structures.</p>
 <div id="atomic-vectors" class="section level4">
 <h4>Atomic vectors</h4>
@@ -319,7 +320,6 @@ str(my_list)
 ##   ..$ : chr &quot;I have 10 cats&quot;
 ##   ..$ : logi FALSE</code></pre>
 <p>Lists are very powerful and although confusing at first it is worth spending time learning how to use them. In particular when we come to the “apply” family of functions we will see how lists can make our lives much easier.</p>
-</div>
 </div>
 <div id="factors" class="section level3">
 <h3>Factors</h3>
@@ -445,8 +445,26 @@ iris[4, ]
 </div>
 <div id="how-to-get-help-and-deal-with-errors" class="section level2">
 <h2>How to get help and deal with errors</h2>
-<div id="google-it" class="section level3">
-<h3><strong>GOOGLE IT!!!</strong></h3>
+<div id="where-to-get-help" class="section level3">
+<h3>Where to get help</h3>
+<div id="built-in-help" class="section level4">
+<h4>Built-in help</h4>
+<p>R-package authors are required to document their functions although this happens at a various levels of usefulness. Simply type <code>?function_name</code> to get help on a function. Type <code>??function</code> to do a fuzzy search. Look carefully what parameters the function requires and what type they are. Some are required (listed first, no default) and some are optional (a default value is usually listed). Most function help will also indicate what the function returns. Good documentation also has more information on what the function is doing.</p>
+<p>Package manuals (required for both CRAN and Bioconductor) are all of these function help pages gathered together in one place.</p>
+</div>
+<div id="vignettes" class="section level4">
+<h4>Vignettes</h4>
+<p>Vignettes (required for Bioconductor packages, but not CRAN) are longer form documentation usually in the form of a tutorial or example usage. These can be extremely helpful and are usually the best place to start when working with a new package. For example the limma (linear models for microarrays) vignette is a small book and an excellent resource on learning how to analyze micorarrays (and RNA-seq). Vignettes can be found by typing <code>browseVignettes(&quot;packageName&quot;)</code> in your console or on the Bioconductor web page for a package.</p>
+</div>
+<div id="elsewhere" class="section level4">
+<h4>Elsewhere</h4>
+<p>Sometimes authors will provide more detailed documenation online. This is more common for more recent packages where the authors may have a github repository and associated webpage. Often discussion pages (Google groups, Github) can also be a useful source of helpt</p>
+</div>
+</div>
+<div id="errors" class="section level3">
+<h3>Errors</h3>
+<div id="google-it" class="section level4">
+<h4><strong>GOOGLE IT!!!</strong></h4>
 <p>If you email me with an error I haven’t seen, the first thing I will do is google it. If you go ahead and post a question on a forum when an easy answer can be found by googling don’t be surprised for an unpleasent response.</p>
 <p>But sometimes an easy answer can’t be found so here’s a quick process to walk through:</p>
 <ol style="list-style-type: decimal">
@@ -465,7 +483,7 @@ iris[4, ]
 <p>Hint: How many columns does the <code>iris</code> data frame have?</p>
 <pre class="r"><code>sample[1:10,]
 ## Error in sample[1:10, ]: object of type &#39;closure&#39; is not subsettable</code></pre>
-<p>Hint: What does <code>typeof(sample)</code> give you?</p>
+<p>Hint: What does <code>typeof(sample)</code> give you? What about <code>sample(10)</code>? Or <code>?sample</code></p>
 <pre class="r"><code>mat[4, 2]
 ## Error in mat[4, 2]: subscript out of bounds</code></pre>
 <p>Hint: What are the dimensions (<code>dim()</code>) of <code>mat</code>?</p>
@@ -487,6 +505,7 @@ if (nothing == NA) {
 x$y = 1:4
 ## Error in `$&lt;-.data.frame`(`*tmp*`, &quot;y&quot;, value = 1:4): replacement has 4 rows, data has 0</code></pre>
 <p>Hint: How many rows does <code>x</code> have?</p>
+</div>
 </div>
 </div>
 

@@ -38,5 +38,5 @@ navbar:
     href: https://github.com/ucvm/rbootcamp
 output:
   html_document:
-    theme: sandstone
+    theme: simplex
 output_dir: "."
