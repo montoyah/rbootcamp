@@ -860,20 +860,20 @@ iris[iris$Species == &quot;setosa&quot;, ]
 <p>Many times when programming, a task, or set of tasks, need to be done over and over again on lots of things. For instance lets say that you have a data frame and want to calcluate the mean of each column.</p>
 <pre class="r"><code>df = data.frame(x = rnorm(50), y = rnorm(50), z = rnorm(50))
 head(df)
-##             x          y          z
-## 1  0.08049138 -0.5531008 -0.6690216
-## 2  2.06398064 -0.9119010  1.6271297
-## 3 -0.48939370 -1.1852896 -0.4244501
-## 4  0.40140536  0.7616430 -1.2687025
-## 5 -1.12361652  0.6267133  1.1441510
-## 6 -0.77701121  0.7079523 -1.4933357</code></pre>
+##            x           y            z
+## 1  0.2733913  2.00950315 -0.732191114
+## 2  1.3452275  0.85665376 -1.315712367
+## 3 -1.8302856  1.03106489  0.133567854
+## 4  1.6702875 -0.65935549  0.004720709
+## 5 -0.5732372  0.08290765  1.107008071
+## 6 -0.3834179 -1.11979360 -0.527813747</code></pre>
 <p>It could be done individually:</p>
 <pre class="r"><code>mean(df$x)
-## [1] -0.1385863
+## [1] 0.1040472
 mean(df$y)
-## [1] -0.1762055
+## [1] -0.2241356
 mean(df$z)
-## [1] 0.04065839</code></pre>
+## [1] -0.1426287</code></pre>
 <p>But this gets tedious for many columns and it’s easy to make mistakes. Loops are a good choice here.</p>
 <pre class="r"><code>output = vector(&quot;double&quot;, ncol(df))
 
@@ -882,7 +882,7 @@ for (i in seq_along(df)) {
 }
 
 output
-## [1] -0.13858628 -0.17620550  0.04065839</code></pre>
+## [1]  0.1040472 -0.2241356 -0.1426287</code></pre>
 <p>Break it down:</p>
 <pre><code>output = vector(&quot;double&quot;, ncol(df))</code></pre>
 <p>First predefine our output</p>

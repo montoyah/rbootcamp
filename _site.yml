@@ -42,4 +42,5 @@ output:
     toc: true
     toc_float: 
      collapsed: false
-output_dir: "_site"
+output_dir: "docs"
+exclude: "docs"
