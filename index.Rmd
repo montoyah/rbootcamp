@@ -46,6 +46,18 @@ Attendees are expected to come with their own laptops and have already installed
 
 This small bit of preparation will allow us to move quickly through the basics and get to the good stuff.
 
+### Course reference
+
+Main text:
+
+Advanced R by Hadley Wickham
+http://adv-r.had.co.nz/
+
+Secondary reading:
+
+R for Data Science by Garret Grolemund and Hadley Wickham
+http://r4ds.had.co.nz/ (in progress)
+
 
 ### [Day 0: Introduction](day0.html)
 __Thursday, September 8, 9:00 - 10:00 am__

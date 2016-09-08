@@ -235,23 +235,162 @@ x | y    | x OR y
 x & y    | x AND y
 isTRUE(x)| test if x is TRUE
 
+## Assignment
+
+A quick note here on two different assignment operators used in R.  Historically R has used `<-` for assignment.
+```{r}
+x <- 5
+x
+```
+
+However, in this course so far you've seen me using `=` for assignment.
+```{r}
+x = 5
+x
+```
+
+Both are equally valid, despite what you may read otherwise.  Each has a couple of quirks to be aware of but these are very minor.  Decide which one you prefer and be consistent.
+
+### Using `<-`
+
+* Longer to type (two key strokes, plus SHIFT)
+* Can make mistakes like this: `r x< -5`
+* Your code will look more like the majority of what's out there.
+
+### Using `=`
+
+* Quicker to type
+* Similar to modern programming lanugages
+* Also used for passing parameters in functions `rnorm(n = 10)`
+* Difference between `=` and `==` can be confusing to start
+
+Decide for yourself, be consistent and whichever you choose make sure to surround it in spaces.
+```{r}
+# Good
+x = 5 
+y <- 4
+
+# Bad
+x=5
+y<-4
+```
+
+
 
 ## Environments
 
-What is an environment?
+What is an environment?  This is a topic for an entire workshop in and of itself, however it is important to have a basic understanding of environments.
+
+Environments are how R knows where to look for things. The only environment that you *usually* have to pay attention to is `.GlobalEnv`, your working environment.  When you define an object `z = 50`, this object, `z` now lives in the global environment.  When you ask R to do something with the object `z`, say `print(z)`, then R begins to look for object `z` in the global environment.  If it can't find it there then it searches other places it knows like attached packages.  For example if `z` happened to be a function in a package called `alphabet` and that package had been attached (`library(alphabet)`), then R would find `z` there.
+
+Environments are important to understand even when you are starting out because they can be the source of hard to find but devestating mistakes.  __Know what is in your environment!__ RStudio has a very useful panel called `Environment` that tells you exactly what is in your global environment.  The function `ls()` also lists the objects in your global environment.
+
+Here's the kicker - you can define objects of any name in your global environment.  Here's something you should never do. Best not to run this code in your own session.
+
+```{r}
+5 + 5 
+
+`+` = function(x,y) {
+ 	return(x*y)
+}
+
+5 + 5
+
+ls()
+
+rm("+")
+
+5 + 5
+```
+
+Why does this work?  Hint: Thing about where R looks first to find objects.
+
+Some tips:
+* Always start your analysis in a new environment
+* Never save your workspace (R asks you about this when quitting, always say no)
+* Don't analyze different projects in the same environment.
+* If you have an error try re-running your script in a new session (fresh environment)
+* On the flipside, make sure your script can run in a new session.
+* Use unique names for your objects
+
 
 
 ## How to work with objects: subsetting, indexing, apply functions
 
 ### Subsetting
 
-### Indexing
 
-### Iterating over an object
+Some common ways to subset dataframes
+```{r}
+head(iris)
 
-#### Loops
+# just the species column
+iris$Species
 
-#### Apply functions
+# 3rd row and all columns
+iris[3, ]
+
+# 3rd column and all rows
+iris[, 3]
+
+# 4th row and 2nd column
+iris[4, 2]
+
+# rows 1 to 10 and all columns
+iris[1:10, ]
+```
+
+Using vectors
+
+```{r}
+# predfined vector
+rows_to_keep = c(2, 4, 7, 9)
+iris[rows_to_keep, ]
+
+# logicals work to
+iris$Species == "setosa"
+iris[iris$Species == "setosa", ]
+```
+
+Homework: Read the [subsetting](http://adv-r.had.co.nz/Subsetting.html) chapter in Advanced R
+
+## Loops and apply
+
+### Loops
+
+Many times when programming, a task, or set of tasks, need to be done over and over again on lots of things.  For instance lets say that you have a data frame and want to calcluate the mean of each column.
+
+```{r}
+df = data.frame(x = rnorm(50), y = rnorm(50), z = rnorm(50))
+head(df)
+```
+
+It could be done individually:
+```{r}
+mean(df$x)
+mean(df$y)
+mean(df$z)
+```
+
+But this gets tedious for many columns and it's easy to make mistakes.  Loops are a good choice here.
+
+```{r}
+output = vector("double", ncol(df))
+
+for (i in seq_along(df)) {
+	output[[i]] = mean(df[[i]])
+}
+
+output
+```
+
+Break it down:
+
+```
+output = vector("double", ncol(df))
+```
+
+First predefine our output
 
 
 ## Other important key R functions 

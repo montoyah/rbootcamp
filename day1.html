@@ -523,26 +523,265 @@ test_values %in% some_values
 </div>
 </div>
 </div>
+<div id="assignment" class="section level2">
+<h2>Assignment</h2>
+<p>A quick note here on two different assignment operators used in R. Historically R has used <code>&lt;-</code> for assignment.</p>
+<pre class="r"><code>x &lt;- 5
+x
+## [1] 5</code></pre>
+<p>However, in this course so far you’ve seen me using <code>=</code> for assignment.</p>
+<pre class="r"><code>x = 5
+x
+## [1] 5</code></pre>
+<p>Both are equally valid, despite what you may read otherwise. Each has a couple of quirks to be aware of but these are very minor. Decide which one you prefer and be consistent.</p>
+<div id="using--" class="section level3">
+<h3>Using <code>&lt;-</code></h3>
+<ul>
+<li>Longer to type (two key strokes, plus SHIFT)</li>
+<li>Can make mistakes like this: FALSE</li>
+<li>Your code will look more like the majority of what’s out there.</li>
+</ul>
+</div>
+<div id="using" class="section level3">
+<h3>Using <code>=</code></h3>
+<ul>
+<li>Quicker to type</li>
+<li>Similar to modern programming lanugages</li>
+<li>Also used for passing parameters in functions <code>rnorm(n = 10)</code></li>
+<li>Difference between <code>=</code> and <code>==</code> can be confusing to start</li>
+</ul>
+<p>Decide for yourself, be consistent and whichever you choose make sure to surround it in spaces.</p>
+<pre class="r"><code># Good
+x = 5 
+y &lt;- 4
+
+# Bad
+x=5
+y&lt;-4</code></pre>
+</div>
+</div>
 <div id="environments" class="section level2">
 <h2>Environments</h2>
-<p>What is an environment?</p>
+<p>What is an environment? This is a topic for an entire workshop in and of itself, however it is important to have a basic understanding of environments.</p>
+<p>Environments are how R knows where to look for things. The only environment that you <em>usually</em> have to pay attention to is <code>.GlobalEnv</code>, your working environment. When you define an object <code>z = 50</code>, this object, <code>z</code> now lives in the global environment. When you ask R to do something with the object <code>z</code>, say <code>print(z)</code>, then R begins to look for object <code>z</code> in the global environment. If it can’t find it there then it searches other places it knows like attached packages. For example if <code>z</code> happened to be a function in a package called <code>alphabet</code> and that package had been attached (<code>library(alphabet)</code>), then R would find <code>z</code> there.</p>
+<p>Environments are important to understand even when you are starting out because they can be the source of hard to find but devestating mistakes. <strong>Know what is in your environment!</strong> RStudio has a very useful panel called <code>Environment</code> that tells you exactly what is in your global environment. The function <code>ls()</code> also lists the objects in your global environment.</p>
+<p>Here’s the kicker - you can define objects of any name in your global environment. Here’s something you should never do. Best not to run this code in your own session.</p>
+<pre class="r"><code>5 + 5 
+## [1] 10
+
+`+` = function(x,y) {
+    return(x*y)
+}
+
+5 + 5
+## [1] 25
+
+ls()
+##  [1] &quot;+&quot;                   &quot;cats&quot;                &quot;char_vector&quot;        
+##  [4] &quot;cool_animals&quot;        &quot;cool_animals_factor&quot; &quot;crazy_factor&quot;       
+##  [7] &quot;dogs&quot;                &quot;int_vector&quot;          &quot;logical_vector&quot;     
+## [10] &quot;mat&quot;                 &quot;my_list&quot;             &quot;nothing&quot;            
+## [13] &quot;num_vector&quot;          &quot;say_hello&quot;           &quot;some_values&quot;        
+## [16] &quot;test_values&quot;         &quot;x&quot;                   &quot;y&quot;
+
+rm(&quot;+&quot;)
+
+5 + 5
+## [1] 10</code></pre>
+<p>Why does this work? Hint: Thing about where R looks first to find objects.</p>
+<p>Some tips: * Always start your analysis in a new environment * Never save your workspace (R asks you about this when quitting, always say no) * Don’t analyze different projects in the same environment. * If you have an error try re-running your script in a new session (fresh environment) * On the flipside, make sure your script can run in a new session. * Use unique names for your objects</p>
 </div>
 <div id="how-to-work-with-objects-subsetting-indexing-apply-functions" class="section level2">
 <h2>How to work with objects: subsetting, indexing, apply functions</h2>
 <div id="subsetting" class="section level3">
 <h3>Subsetting</h3>
+<p>Some common ways to subset dataframes</p>
+<pre class="r"><code>head(iris)
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+
+# just the species column
+iris$Species
+##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
+##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [19] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [25] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [31] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [37] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [43] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [49] setosa     setosa     versicolor versicolor versicolor versicolor
+##  [55] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [61] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [67] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [73] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [79] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [85] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [91] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [97] versicolor versicolor versicolor versicolor virginica  virginica 
+## [103] virginica  virginica  virginica  virginica  virginica  virginica 
+## [109] virginica  virginica  virginica  virginica  virginica  virginica 
+## [115] virginica  virginica  virginica  virginica  virginica  virginica 
+## [121] virginica  virginica  virginica  virginica  virginica  virginica 
+## [127] virginica  virginica  virginica  virginica  virginica  virginica 
+## [133] virginica  virginica  virginica  virginica  virginica  virginica 
+## [139] virginica  virginica  virginica  virginica  virginica  virginica 
+## [145] virginica  virginica  virginica  virginica  virginica  virginica 
+## Levels: setosa versicolor virginica
+
+# 3rd row and all columns
+iris[3, ]
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 3          4.7         3.2          1.3         0.2  setosa
+
+# 3rd column and all rows
+iris[, 3]
+##   [1] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3
+##  [18] 1.4 1.7 1.5 1.7 1.5 1.0 1.7 1.9 1.6 1.6 1.5 1.4 1.6 1.6 1.5 1.5 1.4
+##  [35] 1.5 1.2 1.3 1.4 1.3 1.5 1.3 1.3 1.3 1.6 1.9 1.4 1.6 1.4 1.5 1.4 4.7
+##  [52] 4.5 4.9 4.0 4.6 4.5 4.7 3.3 4.6 3.9 3.5 4.2 4.0 4.7 3.6 4.4 4.5 4.1
+##  [69] 4.5 3.9 4.8 4.0 4.9 4.7 4.3 4.4 4.8 5.0 4.5 3.5 3.8 3.7 3.9 5.1 4.5
+##  [86] 4.5 4.7 4.4 4.1 4.0 4.4 4.6 4.0 3.3 4.2 4.2 4.2 4.3 3.0 4.1 6.0 5.1
+## [103] 5.9 5.6 5.8 6.6 4.5 6.3 5.8 6.1 5.1 5.3 5.5 5.0 5.1 5.3 5.5 6.7 6.9
+## [120] 5.0 5.7 4.9 6.7 4.9 5.7 6.0 4.8 4.9 5.6 5.8 6.1 6.4 5.6 5.1 5.6 6.1
+## [137] 5.6 5.5 4.8 5.4 5.6 5.1 5.1 5.9 5.7 5.2 5.0 5.2 5.4 5.1
+
+# 4th row and 2nd column
+iris[4, 2]
+## [1] 3.1
+
+# rows 1 to 10 and all columns
+iris[1:10, ]
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 2           4.9         3.0          1.4         0.2  setosa
+## 3           4.7         3.2          1.3         0.2  setosa
+## 4           4.6         3.1          1.5         0.2  setosa
+## 5           5.0         3.6          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 7           4.6         3.4          1.4         0.3  setosa
+## 8           5.0         3.4          1.5         0.2  setosa
+## 9           4.4         2.9          1.4         0.2  setosa
+## 10          4.9         3.1          1.5         0.1  setosa</code></pre>
+<p>Using vectors</p>
+<pre class="r"><code># predfined vector
+rows_to_keep = c(2, 4, 7, 9)
+iris[rows_to_keep, ]
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 2          4.9         3.0          1.4         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 7          4.6         3.4          1.4         0.3  setosa
+## 9          4.4         2.9          1.4         0.2  setosa
+
+# logicals work to
+iris$Species == &quot;setosa&quot;
+##   [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [12]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [23]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [34]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [45]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [56] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [67] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [78] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [89] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [100] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [111] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [122] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [144] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+iris[iris$Species == &quot;setosa&quot;, ]
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 2           4.9         3.0          1.4         0.2  setosa
+## 3           4.7         3.2          1.3         0.2  setosa
+## 4           4.6         3.1          1.5         0.2  setosa
+## 5           5.0         3.6          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 7           4.6         3.4          1.4         0.3  setosa
+## 8           5.0         3.4          1.5         0.2  setosa
+## 9           4.4         2.9          1.4         0.2  setosa
+## 10          4.9         3.1          1.5         0.1  setosa
+## 11          5.4         3.7          1.5         0.2  setosa
+## 12          4.8         3.4          1.6         0.2  setosa
+## 13          4.8         3.0          1.4         0.1  setosa
+## 14          4.3         3.0          1.1         0.1  setosa
+## 15          5.8         4.0          1.2         0.2  setosa
+## 16          5.7         4.4          1.5         0.4  setosa
+## 17          5.4         3.9          1.3         0.4  setosa
+## 18          5.1         3.5          1.4         0.3  setosa
+## 19          5.7         3.8          1.7         0.3  setosa
+## 20          5.1         3.8          1.5         0.3  setosa
+## 21          5.4         3.4          1.7         0.2  setosa
+## 22          5.1         3.7          1.5         0.4  setosa
+## 23          4.6         3.6          1.0         0.2  setosa
+## 24          5.1         3.3          1.7         0.5  setosa
+## 25          4.8         3.4          1.9         0.2  setosa
+## 26          5.0         3.0          1.6         0.2  setosa
+## 27          5.0         3.4          1.6         0.4  setosa
+## 28          5.2         3.5          1.5         0.2  setosa
+## 29          5.2         3.4          1.4         0.2  setosa
+## 30          4.7         3.2          1.6         0.2  setosa
+## 31          4.8         3.1          1.6         0.2  setosa
+## 32          5.4         3.4          1.5         0.4  setosa
+## 33          5.2         4.1          1.5         0.1  setosa
+## 34          5.5         4.2          1.4         0.2  setosa
+## 35          4.9         3.1          1.5         0.2  setosa
+## 36          5.0         3.2          1.2         0.2  setosa
+## 37          5.5         3.5          1.3         0.2  setosa
+## 38          4.9         3.6          1.4         0.1  setosa
+## 39          4.4         3.0          1.3         0.2  setosa
+## 40          5.1         3.4          1.5         0.2  setosa
+## 41          5.0         3.5          1.3         0.3  setosa
+## 42          4.5         2.3          1.3         0.3  setosa
+## 43          4.4         3.2          1.3         0.2  setosa
+## 44          5.0         3.5          1.6         0.6  setosa
+## 45          5.1         3.8          1.9         0.4  setosa
+## 46          4.8         3.0          1.4         0.3  setosa
+## 47          5.1         3.8          1.6         0.2  setosa
+## 48          4.6         3.2          1.4         0.2  setosa
+## 49          5.3         3.7          1.5         0.2  setosa
+## 50          5.0         3.3          1.4         0.2  setosa</code></pre>
+<p>Homework: Read the <a href="http://adv-r.had.co.nz/Subsetting.html">subsetting</a> chapter in Advanced R</p>
 </div>
-<div id="indexing" class="section level3">
-<h3>Indexing</h3>
 </div>
-<div id="iterating-over-an-object" class="section level3">
-<h3>Iterating over an object</h3>
-<div id="loops" class="section level4">
-<h4>Loops</h4>
-</div>
-<div id="apply-functions" class="section level4">
-<h4>Apply functions</h4>
-</div>
+<div id="loops-and-apply" class="section level2">
+<h2>Loops and apply</h2>
+<div id="loops" class="section level3">
+<h3>Loops</h3>
+<p>Many times when programming, a task, or set of tasks, need to be done over and over again on lots of things. For instance lets say that you have a data frame and want to calcluate the mean of each column.</p>
+<pre class="r"><code>df = data.frame(x = rnorm(50), y = rnorm(50), z = rnorm(50))
+head(df)
+##            x           y           z
+## 1 -1.1421217 -0.84259699  0.51935861
+## 2 -0.2137050 -1.13051348 -2.09800074
+## 3  0.3672298 -0.02312455 -0.43563416
+## 4  1.1681423  0.08859887  0.61692242
+## 5  0.3799084  1.14065406 -1.17833718
+## 6 -0.1334893  0.19032027 -0.06540244</code></pre>
+<p>It could be done individually:</p>
+<pre class="r"><code>mean(df$x)
+## [1] -0.05226507
+mean(df$y)
+## [1] -0.1121689
+mean(df$z)
+## [1] -0.1572788</code></pre>
+<p>But this gets tedious for many columns and it’s easy to make mistakes. Loops are a good choice here.</p>
+<pre class="r"><code>output = vector(&quot;double&quot;, ncol(df))
+
+for (i in seq_along(df)) {
+    output[[i]] = mean(df[[i]])
+}
+
+output
+## [1] -0.05226507 -0.11216890 -0.15727883</code></pre>
+<p>Break it down:</p>
+<pre><code>output = vector(&quot;double&quot;, ncol(df))</code></pre>
+<p>First predefine our output</p>
 </div>
 </div>
 <div id="other-important-key-r-functions" class="section level2">
@@ -572,11 +811,11 @@ rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;), each = 6)
 ## [18] &quot;C&quot;</code></pre>
 <pre class="r"><code>normal_dist = rnorm(n = 1e6, mean = 2, sd = 1.2)
 hist(normal_dist, main = &quot;A normal distribution&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="day1_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <pre class="r"><code>
 uniform_dist = runif(n = 1e6, min = 10, max = 20)
 hist(uniform_dist, main = &quot;A uniform distribution&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<p><img src="day1_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
 </div>
 <div id="basic-statistics" class="section level3">
 <h3>Basic statistics</h3>
@@ -607,7 +846,7 @@ sd(x)
 
 y = rnorm(x, 1, 0.2 * x) + x
 plot(x,y)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="day1_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <pre class="r"><code>
 var(x)
 ## [1] 70698.09
@@ -647,8 +886,18 @@ summary(my_model)
 
 plot(x, y, main = &quot;Linear model&quot;)
 abline(my_model, col = &quot;red&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="day1_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
+</div>
+<div id="homework" class="section level2">
+<h2>Homework</h2>
+<p>Install the readr package and using the readr documentation figure out how to load the provided dataset. With this dataset answer the following:</p>
+<ul>
+<li>How many rows and columns are in the data?</li>
+<li>What is the maximum value in the “” column?</li>
+<li>Are variables x and y linearly correlated?</li>
+<li>Write a function that mean centers a column (subtract the column mean from every value in that column) and run it on all columns in the dataset.</li>
+</ul>
 </div>
 
 
