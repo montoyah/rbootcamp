@@ -3,24 +3,24 @@ navbar:
  title: "UCVM R Bootcamp"
  left:
   - text: "Home"
-    icon: fa-home
+    icon: "fa-home"
     href: index.html
   - text: "Course Materials"
     icon: fa-book
     menu:
-      - text: "Day 0"
+      - text: "Introduction"
         href: day0.html
-      - text: "Day 1"
+      - text: "Understanding R"
         href: day1.html
-      - text: "Day 2"
+      - text: "Practical data management, part 1"
         href: day2.html
-      - text: "Day 3"
+      - text: "Practical data management, part 2"
         href: day3.html
-      - text: "Day 4"
+      - text: "Data visualization"
         href: day4.html
-      - text: "Day 5"
+      - text: "Introduction to Bioconductor"
         href: day5.html
-      - text: "Day 6"
+      - text: "Reproducability and wrapup"
         href: day6.html
   - text: "References"
     icon: fa-external-link
@@ -38,5 +38,8 @@ navbar:
     href: https://github.com/ucvm/rbootcamp
 output:
   html_document:
-    theme: simplex
-output_dir: "."
+    theme: lumen
+    toc: true
+    toc_float: 
+     collapsed: false
+output_dir: "_site"

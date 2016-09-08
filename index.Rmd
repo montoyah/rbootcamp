@@ -1,14 +1,14 @@
 ---
-title: "R Bootcamp for biolgists"
+title: "R Bootcamp for Biolgists"
 ---
 
 ## Overview
 
-Introduction to the R programming languange with a focus on using it for biological data analysis.  The purpose of this course is to teach scientists (students, postdocs, PIs) in the biological and medical sciences to use R for typical data analyis tasks they might encounter routinely.  This includes sequence analysis and other bioinformatics tasks.  No prior knowledge of R is expected and workshop attendees can expect to come away with a skill set that is immediately translatable to their respective data tasks.
+Introduction to the R programming language with a focus on using it for biological data analysis.  The purpose of this course is to teach scientists (students, postdocs, PIs) in the biological and medical sciences to use R for typical data analysis tasks they might encounter routinely.  This includes sequence analysis and other bioinformatics tasks.  No prior knowledge of R is expected and workshop attendees can expect to come away with a skill set that is immediately translatable to their respective data tasks.
 
 ## Workshop Structure
 
-This is a two week course that will consist of a 3 hour classroom session on Monday, Wednesday, and Thursday mornings from 9 am - 12 pm.  These classroom session will consist of both lecuture and lab times and there will be a number of assignments that attendees will be required to complete outside of classroom times.
+This is a two week course that will consist of 6, 3 hour sessions consisting of both lecture and lab time.
 
 
 ## Learning Objectives
@@ -22,7 +22,7 @@ At the end of the workshop you will able to:
 * Import a wide variety of data types into R
 * Understand the basic data types: integer, numeric, logical, character
 * Understand R's basic data structures: vector, matrix, list, data.frame
-* Understand basic programming concepts: functions, objects, loops, vecotrization, conditionals
+* Understand basic programming concepts: functions, objects, loops, vectorization, conditionals
 * Manipulate data structures by subsetting and indexing
 * Understand key base R functions: seq, apply (and friends)
 * Manipulate data with dplyr and friends
@@ -33,9 +33,8 @@ At the end of the workshop you will able to:
 * Understand the difference between `<-` and `=` and make your own choice about which one to use
 
 
-## Outline
 
-### Preparation
+## Preparation
 
 Attendees are expected to come with their own laptops and have already installed R and RStudio as well as completed at least one of the following online tutorials. 
 
@@ -48,19 +47,18 @@ This small bit of preparation will allow us to move quickly through the basics a
 
 ### Course reference
 
-Main text:
+Main text:  
 
-Advanced R by Hadley Wickham
-http://adv-r.had.co.nz/
+[Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
 
-Secondary reading:
+Secondary reading:  
 
-R for Data Science by Garret Grolemund and Hadley Wickham
-http://r4ds.had.co.nz/ (in progress)
+[R for Data Science](http://r4ds.had.co.nz/) by Garret Grolemund and Hadley Wickham
 
 
-### [Day 0: Introduction](day0.html)
-__Thursday, September 8, 9:00 - 10:00 am__
+## Outline
+
+### [Introduction](day0.html)
 
 * Introductions and course objectives
 * Make sure everyone has R and Rstudio running
@@ -70,8 +68,7 @@ __Thursday, September 8, 9:00 - 10:00 am__
 * How to get help and deal with errors
 
 
-### [Day 1: Understanding R](day1.html)
-__Monday, September 12, 8:30 am - 11:30 am__
+### [Understanding R](day1.html)
 
 * R History
 * Programming concepts
@@ -80,23 +77,20 @@ __Monday, September 12, 8:30 am - 11:30 am__
 * Other important key R functions including basic statistics
 
 
-### [Day 2: Practical data management, part 1](day2.html)
-__Wednesday, September 14, 9:00 am - 12:00 pm__
+### [Practical data management, part 1](day2.html)
 
 * Tidy data
 * Pipes: Ceci n'est pas un pipe
 * Intro to dplyr and tidyr
 * Restructuring data and doing stuff to it
 
-### [Day 3: Practical data management, part 2](day3.html)
-__Thursday, September 15, 9:00 am - 12:00 pm__
+### [Practical data management, part 2](day3.html)
 
 * Continuing dplyr
 * Regular expressions and stringr
 
 
-### [Day 4: Data visualization](day4.html)
-__Monday, September 19, 8:30 am - 11:30 am__
+### [Data visualization](day4.html)
 
 * ggplot
 * heatmaps
@@ -104,16 +98,14 @@ __Monday, September 19, 8:30 am - 11:30 am__
 * Building up a complex visualization
 
 
-### [Day 5: Introduction to Bioconductor](day5.html)
-__Wednesday, September 21, 9:00 am - 12:00 pm__
+### [Introduction to Bioconductor](day5.html)
 
 * Finding and installing biocondutor packages
 * Learning what packages do and how to evaluate them
 * Intro to some key data structures: XStringSet, IRanges, expressionset, etc.
 
 
-### [Day 6: Reproducability and wrapup](day6.html)
-__Thursday, September 22, 9:00 am - 12:00 pm__
+### [Reproducability and wrapup](day6.html)
 
 * Rapid introduction to managing and reproducing your analysis: Rmarkdown, git and github, best practices
 * Writing your own functions

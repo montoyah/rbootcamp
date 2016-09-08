@@ -1,11 +1,23 @@
 ---
-title: "Day 0"
+title: "Introduction"
 ---
 
 ```{r, message=FALSE, echo=FALSE}
 library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
+
+## Using RStudio
+
+To help us code efficiently and reproducibly we'll be using an integrated development environment (IDE) called [RStudio](https://www.rstudio.com/products/RStudio/). 
+
+### RStudio demo
+
+* R and R Studio installed and working
+* Using the file pane and setting your working directory
+* Running code - console and from scripts and rmarkdown documents
+* Using the Environments pane
+
 
 ## Data structures
 
@@ -24,7 +36,7 @@ Atomic vectors are 1-dimensional data structures that must be all the same type
 logical_vector = c(TRUE, FALSE, TRUE)
 
 # Integer
-int_vector = c(1L, 3L, 6L)
+int_vector = c(1L, 3L, 6L)  # Notice the 'L' here
 
 # Double
 num_vector = c(3.4, 493.22, 239992.229)
@@ -63,7 +75,7 @@ Lists are very powerful and although confusing at first it is worth spending tim
 
 ### Factors
 
-Ah, the dreaded factors!  They are used to store categorical variables and although it is tempting to think of them as character vectors this is a dangerous mistake (you will get scratched, badly!).  Factors make perfect sense if you are a statician designing a programming language (!) but to everyone else they exist soley to torment us with confusing errors.  
+Ah, the dreaded factors!  They are used to store categorical variables and although it is tempting to think of them as character vectors this is a dangerous mistake (you will get scratched, badly!).  Factors make perfect sense if you are a statistician designing a programming language (!) but to everyone else they exist solely to torment us with confusing errors.  
 
 A factor is really just an integer vector with an additional attribute, `levels()`, which defines the possible values.
 
@@ -118,7 +130,7 @@ print(mat)
 
 And now for the finale - data frames!  Data frames are very powerful data structures in R and will play a central role in most of the work you'll do.  These are probably the most familiar data structures to most people as they resemble spreadsheets quite closely, at least on the surface.
 
-You can think of data frame as a set of identically sized lists lined up together in columns with a few key features.  Each column must be of the same type but column types can be any of the basic data types (character, integer, etc).  This makes them very useful for structured heterogeneus data, like what many of you generate in the lab everyday.  However, it is very important to remember that they are not spreadsheets and to use them effectively you need to forget everything you've learned about Excel (which is probably a good idea anyway).
+You can think of data frame as a set of identically sized lists lined up together in columns with a few key features.  Each column must be of the same type but column types can be any of the basic data types (character, integer, etc).  This makes them very useful for structured heterogeneous data, like what many of you generate in the lab everyday.  However, it is very important to remember that they are not spreadsheets and to use them effectively you need to forget everything you've learned about Excel (which is probably a good idea anyway).
 
 ```{r}
 # here let's use a data frame that comes built in to R
@@ -134,7 +146,7 @@ Notice the `$` notation, similar to what we saw for lists.  We can use this to e
 iris$Sepal.Length
 ```
 
-Alternitivaly,
+Alternatively,
 
 ```{r}
 iris[["Sepal.Length"]]
@@ -174,24 +186,24 @@ Package manuals (required for both CRAN and Bioconductor) are all of these funct
 
 #### Vignettes
 
-Vignettes (required for Bioconductor packages, but not CRAN) are longer form documentation usually in the form of a tutorial or example usage.  These can be extremely helpful and are usually the best place to start when working with a new package.  For example the limma (linear models for microarrays) vignette is a small book and an excellent resource on learning how to analyze micorarrays (and RNA-seq).  Vignettes can be found by typing `browseVignettes("packageName")` in your console or on the Bioconductor web page for a package. 
+Vignettes (required for Bioconductor packages, but not CRAN) are longer form documentation usually in the form of a tutorial or example usage.  These can be extremely helpful and are usually the best place to start when working with a new package.  For example the limma (linear models for microarrays) vignette is a small book and an excellent resource on learning how to analyze microarrays (and RNA-seq).  Vignettes can be found by typing `browseVignettes("packageName")` in your console or on the Bioconductor web page for a package. 
 
 #### Elsewhere
 
-Sometimes authors will provide more detailed documenation online.  This is more common for more recent packages where the authors may have a github repository and associated webpage.  Often discussion pages (Google groups, Github) can also be a useful source of helpt
+Sometimes authors will provide more detailed documentation online.  This is more common for more recent packages where the authors may have a github repository and associated webpage.  Often discussion pages (Google groups, Github) can also be a useful source of help
 
 ### Errors
 
 #### __GOOGLE IT!!!__
 
-If you email me with an error I haven't seen, the first thing I will do is google it.  If you go ahead and post a question on a forum when an easy answer can be found by googling don't be surprised for an unpleasent response.
+If you email me with an error I haven't seen, the first thing I will do is Google it.  If you go ahead and post a question on a forum when an easy answer can be found by googling don't be surprised for an unpleasant response.
 
 But sometimes an easy answer can't be found so here's a quick process to walk through:
 
 1.  Re-read the error and then think about it for a minute.  See if you can't get a grasp on what's really going wrong.
-2.  Check your code for errors.  Spelling errors, misplaced commas, forgotten paranthesis can all cause problems
+2.  Check your code for errors.  Spelling errors, misplaced commas, forgotten parenthesis can all cause problems
 3.  Look it up - I very, very rarely get an error that someone else hasn't seen before.
-4.  If you still can't find a solution then you can ask for help.  Make friends in this class - get an R buddy.  I can answer brief questions or you can post questions online at StackOverflow.  Sometimes package developers have specific discussion groups on Google groups or Github.  These can be very useful.
+4.  If you still can't find a solution then you can ask for help.  Make friends in this class - get an R buddy.  I can answer brief questions or you can post questions online at Stack Overflow.  Sometimes package developers have specific discussion groups on Google groups or Github.  These can be very useful.
 
 To get you started here are few of the more common errors you might see:
 

@@ -5,6 +5,7 @@ title: "References"
 ## Some useful sites (from which I shamelessly stole material for the course)
 
 * [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
+* [R for Data Science](http://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham
 * [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
 * [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/)
 * [Bioconductor Workflows](https://www.bioconductor.org/help/workflows/)
