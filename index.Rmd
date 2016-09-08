@@ -58,7 +58,7 @@ Secondary reading:
 
 ## Outline
 
-### [Introduction](day0.html)
+### [Introduction](1_introduction.html)
 
 * Introductions and course objectives
 * Make sure everyone has R and Rstudio running
@@ -68,7 +68,7 @@ Secondary reading:
 * How to get help and deal with errors
 
 
-### [Understanding R](day1.html)
+### [Understanding R](2_understanding_R.html)
 
 * R History
 * Programming concepts
@@ -77,20 +77,20 @@ Secondary reading:
 * Other important key R functions including basic statistics
 
 
-### [Practical data management, part 1](day2.html)
+### [Practical data management 1](3_prac_data_management_1.html)
 
 * Tidy data
 * Pipes: Ceci n'est pas un pipe
 * Intro to dplyr and tidyr
 * Restructuring data and doing stuff to it
 
-### [Practical data management, part 2](day3.html)
+### [Practical data management 2](4_prac_data_management_2.html)
 
 * Continuing dplyr
 * Regular expressions and stringr
 
 
-### [Data visualization](day4.html)
+### [Data visualization](5_data_viz.html)
 
 * ggplot
 * heatmaps
@@ -98,14 +98,14 @@ Secondary reading:
 * Building up a complex visualization
 
 
-### [Introduction to Bioconductor](day5.html)
+### [Introduction to Bioconductor](6_intro_to_bioconductor.html)
 
 * Finding and installing biocondutor packages
 * Learning what packages do and how to evaluate them
 * Intro to some key data structures: XStringSet, IRanges, expressionset, etc.
 
 
-### [Reproducability and wrapup](day6.html)
+### [Reproducability and wrapup](7_wrapup.html)
 
 * Rapid introduction to managing and reproducing your analysis: Rmarkdown, git and github, best practices
 * Writing your own functions

@@ -11,7 +11,7 @@
 
 
 
-<title>Day 1</title>
+<title>Understanding R</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
@@ -269,7 +269,7 @@ div.tocify {
 
 
 
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -298,25 +298,25 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="day0.html">Introduction</a>
+      <a href="1_introduction.html">Introduction</a>
     </li>
     <li>
-      <a href="day1.html">Understanding R</a>
+      <a href="2_understanding_R.html">Understanding R</a>
     </li>
     <li>
-      <a href="day2.html">Practical data management, part 1</a>
+      <a href="3_prac_data_management_1.html">Practical data management 1</a>
     </li>
     <li>
-      <a href="day3.html">Practical data management, part 2</a>
+      <a href="4_prac_data_management_2.html">Practical data management 2</a>
     </li>
     <li>
-      <a href="day4.html">Data visualization</a>
+      <a href="5_data_viz.html">Data visualization</a>
     </li>
     <li>
-      <a href="day5.html">Introduction to Bioconductor</a>
+      <a href="6_intro_to_bioconductor.html">Introduction to Bioconductor</a>
     </li>
     <li>
-      <a href="day6.html">Reproducability and wrapup</a>
+      <a href="7_wrapup.html">Reproducability and wrapup</a>
     </li>
   </ul>
 </li>
@@ -367,7 +367,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Day 1</h1>
+<h1 class="title toc-ignore">Understanding R</h1>
 
 </div>
 
@@ -497,7 +497,7 @@ x = rnorm(n = 100, mean = 35, sd = 2)
 # but they don&#39;t have to be named as long as you give them in the right order
 y = rnorm(100, 46, 1.5)
 plot(x, y)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="2_understanding_R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>
 # functions can be nested
 print(paste(&quot;The mean of the x vector is&quot;, round(mean(x))))
@@ -860,20 +860,20 @@ iris[iris$Species == &quot;setosa&quot;, ]
 <p>Many times when programming, a task, or set of tasks, need to be done over and over again on lots of things. For instance lets say that you have a data frame and want to calcluate the mean of each column.</p>
 <pre class="r"><code>df = data.frame(x = rnorm(50), y = rnorm(50), z = rnorm(50))
 head(df)
-##            x           y            z
-## 1  0.2733913  2.00950315 -0.732191114
-## 2  1.3452275  0.85665376 -1.315712367
-## 3 -1.8302856  1.03106489  0.133567854
-## 4  1.6702875 -0.65935549  0.004720709
-## 5 -0.5732372  0.08290765  1.107008071
-## 6 -0.3834179 -1.11979360 -0.527813747</code></pre>
+##            x            y          z
+## 1 -1.3168799 -0.640164141  1.1175020
+## 2 -1.1891392  0.832730441  2.0156823
+## 3 -1.0806494  0.715802631  0.1052823
+## 4 -0.3483204  1.694240469 -0.2271956
+## 5  1.2310353 -0.003158961  0.9396451
+## 6 -0.5019614 -1.475921687 -0.1487269</code></pre>
 <p>It could be done individually:</p>
 <pre class="r"><code>mean(df$x)
-## [1] 0.1040472
+## [1] -0.0010796
 mean(df$y)
-## [1] -0.2241356
+## [1] 0.1145446
 mean(df$z)
-## [1] -0.1426287</code></pre>
+## [1] 0.1780225</code></pre>
 <p>But this gets tedious for many columns and it’s easy to make mistakes. Loops are a good choice here.</p>
 <pre class="r"><code>output = vector(&quot;double&quot;, ncol(df))
 
@@ -882,7 +882,7 @@ for (i in seq_along(df)) {
 }
 
 output
-## [1]  0.1040472 -0.2241356 -0.1426287</code></pre>
+## [1] -0.0010796  0.1145446  0.1780225</code></pre>
 <p>Break it down:</p>
 <pre><code>output = vector(&quot;double&quot;, ncol(df))</code></pre>
 <p>First predefine our output</p>
@@ -915,11 +915,11 @@ rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;), each = 6)
 ## [18] &quot;C&quot;</code></pre>
 <pre class="r"><code>normal_dist = rnorm(n = 1e6, mean = 2, sd = 1.2)
 hist(normal_dist, main = &quot;A normal distribution&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="2_understanding_R_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <pre class="r"><code>
 uniform_dist = runif(n = 1e6, min = 10, max = 20)
 hist(uniform_dist, main = &quot;A uniform distribution&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<p><img src="2_understanding_R_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
 </div>
 <div id="basic-statistics" class="section level3">
 <h3>Basic statistics</h3>
@@ -950,7 +950,7 @@ sd(x)
 
 y = rnorm(x, 1, 0.2 * x) + x
 plot(x,y)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="2_understanding_R_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <pre class="r"><code>
 var(x)
 ## [1] 70698.09
@@ -990,7 +990,7 @@ summary(my_model)
 
 plot(x, y, main = &quot;Linear model&quot;)
 abline(my_model, col = &quot;red&quot;)</code></pre>
-<p><img src="day1_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="2_understanding_R_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 </div>
 <div id="homework" class="section level2">

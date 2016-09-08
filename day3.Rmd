@@ -1,5 +1,0 @@
----
-title: "Day 3"
----
-
-Materials for Day 3

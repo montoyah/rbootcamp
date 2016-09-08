@@ -1,6 +1,7 @@
 name: "R Bootcamp"
 navbar:
  title: "UCVM R Bootcamp"
+ type: inverse
  left:
   - text: "Home"
     icon: "fa-home"
@@ -9,19 +10,19 @@ navbar:
     icon: fa-book
     menu:
       - text: "Introduction"
-        href: day0.html
+        href: 1_introduction.html
       - text: "Understanding R"
-        href: day1.html
-      - text: "Practical data management, part 1"
-        href: day2.html
-      - text: "Practical data management, part 2"
-        href: day3.html
+        href: 2_understanding_R.html
+      - text: "Practical data management 1"
+        href: 3_prac_data_management_1.html
+      - text: "Practical data management 2"
+        href: 4_prac_data_management_2.html
       - text: "Data visualization"
-        href: day4.html
+        href: 5_data_viz.html
       - text: "Introduction to Bioconductor"
-        href: day5.html
+        href: 6_intro_to_bioconductor.html
       - text: "Reproducability and wrapup"
-        href: day6.html
+        href: 7_wrapup.html
   - text: "References"
     icon: fa-external-link
     href: references.html
