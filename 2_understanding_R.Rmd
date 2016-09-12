@@ -513,10 +513,11 @@ abline(my_model, col = "red")
 
 ## Homework
 
-Install the readr package and using the readr documentation figure out how to load the provided dataset. With this dataset answer the following:
+Install the readr package and using the readr documentation figure out how to load the `pa_phenotype_data.csv` dataset. With this dataset answer the following:
 
 * How many rows and columns are in the data?
-* What is the maximum value in the "" column?
-* Are variables x and y linearly correlated?
-* Write a function that mean centers a column (subtract the column mean from every value in that column) and run it on all columns in the dataset.  
+* What is the maximum value in the "LB" column?
+* Are variables "Protease" and "Gelatinase" linearly correlated?
+* What is the adjusted R-squared?
+* Write a function that mean centers a column (subtract the column mean from every value in that column) and run it on the last 6 columns in the dataset.  
 
