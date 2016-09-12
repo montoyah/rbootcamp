@@ -755,26 +755,26 @@ rows_to_keep = sample(1:nrow(iris), size = 10)
 new_iris = iris[rows_to_keep, ]
 new_iris
 ##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 92           6.1         3.0          4.6         1.4 versicolor
-## 40           5.1         3.4          1.5         0.2     setosa
-## 131          7.4         2.8          6.1         1.9  virginica
-## 108          7.3         2.9          6.3         1.8  virginica
-## 128          6.1         3.0          4.9         1.8  virginica
-## 31           4.8         3.1          1.6         0.2     setosa
-## 68           5.8         2.7          4.1         1.0 versicolor
-## 104          6.3         2.9          5.6         1.8  virginica
-## 14           4.3         3.0          1.1         0.1     setosa
-## 134          6.3         2.8          5.1         1.5  virginica
+## 102          5.8         2.7          5.1         1.9  virginica
+## 77           6.8         2.8          4.8         1.4 versicolor
+## 87           6.7         3.1          4.7         1.5 versicolor
+## 140          6.9         3.1          5.4         2.1  virginica
+## 74           6.1         2.8          4.7         1.2 versicolor
+## 33           5.2         4.1          1.5         0.1     setosa
+## 30           4.7         3.2          1.6         0.2     setosa
+## 54           5.5         2.3          4.0         1.3 versicolor
+## 49           5.3         3.7          1.5         0.2     setosa
+## 70           5.6         2.5          3.9         1.1 versicolor
 
 # logicals work too
 new_iris$Species == &quot;setosa&quot;
-##  [1] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE
 
 new_iris[new_iris$Species == &quot;setosa&quot;, ]
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 40          5.1         3.4          1.5         0.2  setosa
-## 31          4.8         3.1          1.6         0.2  setosa
-## 14          4.3         3.0          1.1         0.1  setosa</code></pre>
+## 33          5.2         4.1          1.5         0.1  setosa
+## 30          4.7         3.2          1.6         0.2  setosa
+## 49          5.3         3.7          1.5         0.2  setosa</code></pre>
 <p>For more details on subsetting read the <a href="http://adv-r.had.co.nz/Subsetting.html">subsetting</a> chapter in Advanced R</p>
 </div>
 </div>
@@ -785,20 +785,20 @@ new_iris[new_iris$Species == &quot;setosa&quot;, ]
 <p>Many times when programming, a task, or set of tasks, need to be done over and over again on lots of things. For instance lets say that you have a data frame and want to calcluate the mean of each column.</p>
 <pre class="r"><code>df = data.frame(x = rnorm(50), y = rnorm(50), z = rnorm(50))
 head(df)
-##              x           y          z
-## 1  0.072723074 -1.77020279  0.1989109
-## 2 -0.598072497  1.07329609 -0.5770886
-## 3 -0.350012801  0.01754756  0.2818121
-## 4 -0.887396767 -0.51637725  0.1185609
-## 5  1.011572177 -1.84281376 -1.1254852
-## 6  0.003360188  1.62999125 -0.3938101</code></pre>
+##             x          y           z
+## 1 -0.02251194  0.7408637  0.58656100
+## 2 -1.34820020 -0.7997525 -0.04232614
+## 3  0.08025001 -0.4125638  0.18702356
+## 4  0.23680073  1.7008812  0.51436915
+## 5 -0.47689508 -0.1269485 -0.42064500
+## 6 -0.28027744 -0.1942719 -2.29480407</code></pre>
 <p>It could be done individually:</p>
 <pre class="r"><code>mean(df$x)
-## [1] -0.1218856
+## [1] 0.2046371
 mean(df$y)
-## [1] 0.1256052
+## [1] -0.04949302
 mean(df$z)
-## [1] -0.2693</code></pre>
+## [1] 0.07940152</code></pre>
 <p>But this gets tedious for many columns and it’s easy to make mistakes. Loops are a good choice here.</p>
 <pre class="r"><code>output = vector(&quot;double&quot;, ncol(df))
 
@@ -807,7 +807,7 @@ for (i in seq_along(df)) {
 }
 
 output
-## [1] -0.1218856  0.1256052 -0.2693000</code></pre>
+## [1]  0.20463714 -0.04949302  0.07940152</code></pre>
 <div id="break-it-down" class="section level4">
 <h4>Break it down:</h4>
 <p>First predefine our output. Do this when you can as it speeds up loops in R significantly.</p>
@@ -949,12 +949,13 @@ abline(my_model, col = &quot;red&quot;)</code></pre>
 </div>
 <div id="homework" class="section level2">
 <h2>Homework</h2>
-<p>Install the readr package and using the readr documentation figure out how to load the provided dataset. With this dataset answer the following:</p>
+<p>Install the readr package and using the readr documentation figure out how to load the <code>pa_phenotype_data.csv</code> dataset. With this dataset answer the following:</p>
 <ul>
 <li>How many rows and columns are in the data?</li>
-<li>What is the maximum value in the “” column?</li>
-<li>Are variables x and y linearly correlated?</li>
-<li>Write a function that mean centers a column (subtract the column mean from every value in that column) and run it on all columns in the dataset.</li>
+<li>What is the maximum value in the “LB” column?</li>
+<li>Are variables “Protease” and “Gelatinase” linearly correlated?</li>
+<li>What is the adjusted R-squared?</li>
+<li>Write a function that mean centers a column (subtract the column mean from every value in that column) and run it on the last 6 columns in the dataset.</li>
 </ul>
 </div>
 

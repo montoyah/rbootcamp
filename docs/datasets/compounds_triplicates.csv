@@ -1,0 +1,505 @@
+compound,salinity,group,day,methane_produced,replicate_number
+benzene,fresh,treatment,1,21.21,1
+benzene,fresh,treatment,1,11.725,2
+benzene,fresh,treatment,1,9.415,3
+benzene,fresh,sterile,1,NA,1
+benzene,fresh,sterile,1,NA,2
+benzene,fresh,sterile,1,NA,3
+benzene,brackish,treatment,1,10.85,1
+benzene,brackish,treatment,1,8.645,2
+benzene,brackish,treatment,1,5.285,3
+benzene,brackish,sterile,1,NA,1
+benzene,brackish,sterile,1,NA,2
+benzene,brackish,sterile,1,NA,3
+benzene,saline,treatment,1,5.53,1
+benzene,saline,treatment,1,5.915,2
+benzene,saline,treatment,1,5.285,3
+benzene,saline,sterile,1,NA,1
+benzene,saline,sterile,1,NA,2
+benzene,saline,sterile,1,NA,3
+toluene,fresh,treatment,1,8.505,1
+toluene,fresh,treatment,1,8.12,2
+toluene,fresh,treatment,1,7.56,3
+toluene,fresh,sterile,1,NA,1
+toluene,fresh,sterile,1,NA,2
+toluene,fresh,sterile,1,NA,3
+toluene,brackish,treatment,1,9.17,1
+toluene,brackish,treatment,1,9.415,2
+toluene,brackish,treatment,1,7.98,3
+toluene,brackish,sterile,1,NA,1
+toluene,brackish,sterile,1,NA,2
+toluene,brackish,sterile,1,NA,3
+toluene,saline,treatment,1,6.125,1
+toluene,saline,treatment,1,6.545,2
+toluene,saline,treatment,1,8.995,3
+toluene,saline,sterile,1,NA,1
+toluene,saline,sterile,1,NA,2
+toluene,saline,sterile,1,NA,3
+hexane,fresh,treatment,1,10.78,1
+hexane,fresh,treatment,1,10.71,2
+hexane,fresh,treatment,1,5.95,3
+hexane,fresh,sterile,1,NA,1
+hexane,fresh,sterile,1,NA,2
+hexane,fresh,sterile,1,NA,3
+hexane,brackish,treatment,1,6.72,1
+hexane,brackish,treatment,1,7.245,2
+hexane,brackish,treatment,1,7.735,3
+hexane,brackish,sterile,1,NA,1
+hexane,brackish,sterile,1,NA,2
+hexane,brackish,sterile,1,NA,3
+hexane,saline,treatment,1,7.98,1
+hexane,saline,treatment,1,5.495,2
+hexane,saline,treatment,1,5.705,3
+hexane,saline,sterile,1,NA,1
+hexane,saline,sterile,1,NA,2
+hexane,saline,sterile,1,NA,3
+unamended,fresh,unamended,1,NA,1
+unamended,fresh,unamended,1,6.195,2
+unamended,fresh,unamended,1,5.985,3
+unamended,brackish,unamended,1,6.37,1
+unamended,brackish,unamended,1,NA,2
+unamended,brackish,unamended,1,6.125,3
+unamended,saline,unamended,1,4.515,1
+unamended,saline,unamended,1,5.075,2
+unamended,saline,unamended,1,4.2,3
+unamended,fresh,media only,1,NA,1
+unamended,fresh,media only,1,NA,2
+unamended,fresh,media only,1,NA,3
+unamended,brackish,media only,1,NA,1
+unamended,brackish,media only,1,NA,2
+unamended,brackish,media only,1,NA,3
+unamended,saline,media only,1,NA,1
+unamended,saline,media only,1,NA,2
+unamended,saline,media only,1,NA,3
+benzene,fresh,treatment,10,17.885,1
+benzene,fresh,treatment,10,8.54,2
+benzene,fresh,treatment,10,6.58,3
+benzene,fresh,sterile,10,NA,1
+benzene,fresh,sterile,10,NA,2
+benzene,fresh,sterile,10,NA,3
+benzene,brackish,treatment,10,8.785,1
+benzene,brackish,treatment,10,6.37,2
+benzene,brackish,treatment,10,5.18,3
+benzene,brackish,sterile,10,NA,1
+benzene,brackish,sterile,10,NA,2
+benzene,brackish,sterile,10,NA,3
+benzene,saline,treatment,10,1.96,1
+benzene,saline,treatment,10,2.415,2
+benzene,saline,treatment,10,1.645,3
+benzene,saline,sterile,10,NA,1
+benzene,saline,sterile,10,NA,2
+benzene,saline,sterile,10,NA,3
+toluene,fresh,treatment,10,4.69,1
+toluene,fresh,treatment,10,4.725,2
+toluene,fresh,treatment,10,4.55,3
+toluene,fresh,sterile,10,NA,1
+toluene,fresh,sterile,10,NA,2
+toluene,fresh,sterile,10,NA,3
+toluene,brackish,treatment,10,5.705,1
+toluene,brackish,treatment,10,6.16,2
+toluene,brackish,treatment,10,6.65,3
+toluene,brackish,sterile,10,NA,1
+toluene,brackish,sterile,10,NA,2
+toluene,brackish,sterile,10,NA,3
+toluene,saline,treatment,10,2.975,1
+toluene,saline,treatment,10,2.87,2
+toluene,saline,treatment,10,7.315,3
+toluene,saline,sterile,10,NA,1
+toluene,saline,sterile,10,NA,2
+toluene,saline,sterile,10,NA,3
+hexane,fresh,treatment,10,6.72,1
+hexane,fresh,treatment,10,7.77,2
+hexane,fresh,treatment,10,2.345,3
+hexane,fresh,sterile,10,NA,1
+hexane,fresh,sterile,10,NA,2
+hexane,fresh,sterile,10,NA,3
+hexane,brackish,treatment,10,4.235,1
+hexane,brackish,treatment,10,4.725,2
+hexane,brackish,treatment,10,5.285,3
+hexane,brackish,sterile,10,NA,1
+hexane,brackish,sterile,10,NA,2
+hexane,brackish,sterile,10,NA,3
+hexane,saline,treatment,10,5.005,1
+hexane,saline,treatment,10,1.995,2
+hexane,saline,treatment,10,2.03,3
+hexane,saline,sterile,10,NA,1
+hexane,saline,sterile,10,NA,2
+hexane,saline,sterile,10,NA,3
+unamended,fresh,unamended,10,2.31,1
+unamended,fresh,unamended,10,2.625,2
+unamended,fresh,unamended,10,2.625,3
+unamended,brackish,unamended,10,2.73,1
+unamended,brackish,unamended,10,NA,2
+unamended,brackish,unamended,10,3.325,3
+unamended,saline,unamended,10,0.91,1
+unamended,saline,unamended,10,1.645,2
+unamended,saline,unamended,10,0.525,3
+unamended,fresh,media only,10,NA,1
+unamended,fresh,media only,10,NA,2
+unamended,fresh,media only,10,NA,3
+unamended,brackish,media only,10,NA,1
+unamended,brackish,media only,10,NA,2
+unamended,brackish,media only,10,NA,3
+unamended,saline,media only,10,NA,1
+unamended,saline,media only,10,NA,2
+unamended,saline,media only,10,NA,3
+benzene,fresh,treatment,62,7.385,1
+benzene,fresh,treatment,62,5.915,2
+benzene,fresh,treatment,62,7.105,3
+benzene,fresh,sterile,62,NA,1
+benzene,fresh,sterile,62,NA,2
+benzene,fresh,sterile,62,NA,3
+benzene,brackish,treatment,62,8.785,1
+benzene,brackish,treatment,62,12.285,2
+benzene,brackish,treatment,62,4.025,3
+benzene,brackish,sterile,62,NA,1
+benzene,brackish,sterile,62,NA,2
+benzene,brackish,sterile,62,NA,3
+benzene,saline,treatment,62,0.14,1
+benzene,saline,treatment,62,0.49,2
+benzene,saline,treatment,62,-0.105,3
+benzene,saline,sterile,62,NA,1
+benzene,saline,sterile,62,NA,2
+benzene,saline,sterile,62,NA,3
+toluene,fresh,treatment,62,5.845,1
+toluene,fresh,treatment,62,4.9,2
+toluene,fresh,treatment,62,2.45,3
+toluene,fresh,sterile,62,NA,1
+toluene,fresh,sterile,62,NA,2
+toluene,fresh,sterile,62,NA,3
+toluene,brackish,treatment,62,7.63,1
+toluene,brackish,treatment,62,4.69,2
+toluene,brackish,treatment,62,4.13,3
+toluene,brackish,sterile,62,NA,1
+toluene,brackish,sterile,62,NA,2
+toluene,brackish,sterile,62,NA,3
+toluene,saline,treatment,62,1.785,1
+toluene,saline,treatment,62,1.225,2
+toluene,saline,treatment,62,4.235,3
+toluene,saline,sterile,62,NA,1
+toluene,saline,sterile,62,NA,2
+toluene,saline,sterile,62,NA,3
+hexane,fresh,treatment,62,4.375,1
+hexane,fresh,treatment,62,10.71,2
+hexane,fresh,treatment,62,1.785,3
+hexane,fresh,sterile,62,NA,1
+hexane,fresh,sterile,62,NA,2
+hexane,fresh,sterile,62,NA,3
+hexane,brackish,treatment,62,2.73,1
+hexane,brackish,treatment,62,2.625,2
+hexane,brackish,treatment,62,4.06,3
+hexane,brackish,sterile,62,NA,1
+hexane,brackish,sterile,62,NA,2
+hexane,brackish,sterile,62,NA,3
+hexane,saline,treatment,62,2.73,1
+hexane,saline,treatment,62,0,2
+hexane,saline,treatment,62,0.84,3
+hexane,saline,sterile,62,NA,1
+hexane,saline,sterile,62,NA,2
+hexane,saline,sterile,62,NA,3
+unamended,fresh,unamended,62,7.945,1
+unamended,fresh,unamended,62,0.91,2
+unamended,fresh,unamended,62,2.205,3
+unamended,brackish,unamended,62,1.89,1
+unamended,brackish,unamended,62,2.31,2
+unamended,brackish,unamended,62,1.645,3
+unamended,saline,unamended,62,-0.595,1
+unamended,saline,unamended,62,0.07,2
+unamended,saline,unamended,62,-0.77,3
+unamended,fresh,media only,62,NA,1
+unamended,fresh,media only,62,NA,2
+unamended,fresh,media only,62,NA,3
+unamended,brackish,media only,62,NA,1
+unamended,brackish,media only,62,NA,2
+unamended,brackish,media only,62,NA,3
+unamended,saline,media only,62,NA,1
+unamended,saline,media only,62,NA,2
+unamended,saline,media only,62,NA,3
+benzene,fresh,treatment,72,21.105,1
+benzene,fresh,treatment,72,7.175,2
+benzene,fresh,treatment,72,5.88,3
+benzene,fresh,sterile,72,NA,1
+benzene,fresh,sterile,72,NA,2
+benzene,fresh,sterile,72,NA,3
+benzene,brackish,treatment,72,13.755,1
+benzene,brackish,treatment,72,15.61,2
+benzene,brackish,treatment,72,3.22,3
+benzene,brackish,sterile,72,NA,1
+benzene,brackish,sterile,72,NA,2
+benzene,brackish,sterile,72,NA,3
+benzene,saline,treatment,72,-2.31,1
+benzene,saline,treatment,72,-1.54,2
+benzene,saline,treatment,72,-2.345,3
+benzene,saline,sterile,72,NA,1
+benzene,saline,sterile,72,NA,2
+benzene,saline,sterile,72,NA,3
+toluene,fresh,treatment,72,7.385,1
+toluene,fresh,treatment,72,6.475,2
+toluene,fresh,treatment,72,1.47,3
+toluene,fresh,sterile,72,NA,1
+toluene,fresh,sterile,72,NA,2
+toluene,fresh,sterile,72,NA,3
+toluene,brackish,treatment,72,12.075,1
+toluene,brackish,treatment,72,4.795,2
+toluene,brackish,treatment,72,4.48,3
+toluene,brackish,sterile,72,NA,1
+toluene,brackish,sterile,72,NA,2
+toluene,brackish,sterile,72,NA,3
+toluene,saline,treatment,72,1.155,1
+toluene,saline,treatment,72,0.14,2
+toluene,saline,treatment,72,4.585,3
+toluene,saline,sterile,72,NA,1
+toluene,saline,sterile,72,NA,2
+toluene,saline,sterile,72,NA,3
+hexane,fresh,treatment,72,4.795,1
+hexane,fresh,treatment,72,17.36,2
+hexane,fresh,treatment,72,0.35,3
+hexane,fresh,sterile,72,NA,1
+hexane,fresh,sterile,72,NA,2
+hexane,fresh,sterile,72,NA,3
+hexane,brackish,treatment,72,2.66,1
+hexane,brackish,treatment,72,2.73,2
+hexane,brackish,treatment,72,5.075,3
+hexane,brackish,sterile,72,NA,1
+hexane,brackish,sterile,72,NA,2
+hexane,brackish,sterile,72,NA,3
+hexane,saline,treatment,72,2.94,1
+hexane,saline,treatment,72,-1.995,2
+hexane,saline,treatment,72,-0.56,3
+hexane,saline,sterile,72,NA,1
+hexane,saline,sterile,72,NA,2
+hexane,saline,sterile,72,NA,3
+unamended,fresh,unamended,72,12.67,1
+unamended,fresh,unamended,72,-1.05,2
+unamended,fresh,unamended,72,1.96,3
+unamended,brackish,unamended,72,1.225,1
+unamended,brackish,unamended,72,1.26,2
+unamended,brackish,unamended,72,0.21,3
+unamended,saline,unamended,72,-3.15,1
+unamended,saline,unamended,72,-2.03,2
+unamended,saline,unamended,72,-3.36,3
+unamended,fresh,media only,72,NA,1
+unamended,fresh,media only,72,NA,2
+unamended,fresh,media only,72,NA,3
+unamended,brackish,media only,72,NA,1
+unamended,brackish,media only,72,NA,2
+unamended,brackish,media only,72,NA,3
+unamended,saline,media only,72,NA,1
+unamended,saline,media only,72,NA,2
+unamended,saline,media only,72,NA,3
+benzene,fresh,treatment,86,15.19,1
+benzene,fresh,treatment,86,6.16,2
+benzene,fresh,treatment,86,8.54,3
+benzene,fresh,sterile,86,NA,1
+benzene,fresh,sterile,86,NA,2
+benzene,fresh,sterile,86,NA,3
+benzene,brackish,treatment,86,12.95,1
+benzene,brackish,treatment,86,15.715,2
+benzene,brackish,treatment,86,4.515,3
+benzene,brackish,sterile,86,NA,1
+benzene,brackish,sterile,86,NA,2
+benzene,brackish,sterile,86,NA,3
+benzene,saline,treatment,86,-0.525,1
+benzene,saline,treatment,86,-0.175,2
+benzene,saline,treatment,86,-0.91,3
+benzene,saline,sterile,86,NA,1
+benzene,saline,sterile,86,NA,2
+benzene,saline,sterile,86,NA,3
+toluene,fresh,treatment,86,6.125,1
+toluene,fresh,treatment,86,3.885,2
+toluene,fresh,treatment,86,2.065,3
+toluene,fresh,sterile,86,NA,1
+toluene,fresh,sterile,86,NA,2
+toluene,fresh,sterile,86,NA,3
+toluene,brackish,treatment,86,10.64,1
+toluene,brackish,treatment,86,5.145,2
+toluene,brackish,treatment,86,4.655,3
+toluene,brackish,sterile,86,NA,1
+toluene,brackish,sterile,86,NA,2
+toluene,brackish,sterile,86,NA,3
+toluene,saline,treatment,86,2.135,1
+toluene,saline,treatment,86,1.4,2
+toluene,saline,treatment,86,5.635,3
+toluene,saline,sterile,86,NA,1
+toluene,saline,sterile,86,NA,2
+toluene,saline,sterile,86,NA,3
+hexane,fresh,treatment,86,4.27,1
+hexane,fresh,treatment,86,14.315,2
+hexane,fresh,treatment,86,1.925,3
+hexane,fresh,sterile,86,NA,1
+hexane,fresh,sterile,86,NA,2
+hexane,fresh,sterile,86,NA,3
+hexane,brackish,treatment,86,3.57,1
+hexane,brackish,treatment,86,3.22,2
+hexane,brackish,treatment,86,5.67,3
+hexane,brackish,sterile,86,NA,1
+hexane,brackish,sterile,86,NA,2
+hexane,brackish,sterile,86,NA,3
+hexane,saline,treatment,86,3.5,1
+hexane,saline,treatment,86,-0.595,2
+hexane,saline,treatment,86,0.385,3
+hexane,saline,sterile,86,NA,1
+hexane,saline,sterile,86,NA,2
+hexane,saline,sterile,86,NA,3
+unamended,fresh,unamended,86,10.605,1
+unamended,fresh,unamended,86,0.14,2
+unamended,fresh,unamended,86,2.835,3
+unamended,brackish,unamended,86,1.54,1
+unamended,brackish,unamended,86,2.17,2
+unamended,brackish,unamended,86,1.4,3
+unamended,saline,unamended,86,-1.47,1
+unamended,saline,unamended,86,-0.42,2
+unamended,saline,unamended,86,-1.575,3
+unamended,fresh,media only,86,NA,1
+unamended,fresh,media only,86,NA,2
+unamended,fresh,media only,86,NA,3
+unamended,brackish,media only,86,NA,1
+unamended,brackish,media only,86,NA,2
+unamended,brackish,media only,86,NA,3
+unamended,saline,media only,86,NA,1
+unamended,saline,media only,86,NA,2
+unamended,saline,media only,86,NA,3
+benzene,fresh,treatment,102,15.295,1
+benzene,fresh,treatment,102,5.215,2
+benzene,fresh,treatment,102,8.61,3
+benzene,fresh,sterile,102,NA,1
+benzene,fresh,sterile,102,NA,2
+benzene,fresh,sterile,102,NA,3
+benzene,brackish,treatment,102,12.565,1
+benzene,brackish,treatment,102,19.81,2
+benzene,brackish,treatment,102,4.655,3
+benzene,brackish,sterile,102,NA,1
+benzene,brackish,sterile,102,NA,2
+benzene,brackish,sterile,102,NA,3
+benzene,saline,treatment,102,-2.205,1
+benzene,saline,treatment,102,-1.925,2
+benzene,saline,treatment,102,-2.415,3
+benzene,saline,sterile,102,NA,1
+benzene,saline,sterile,102,NA,2
+benzene,saline,sterile,102,NA,3
+toluene,fresh,treatment,102,5.88,1
+toluene,fresh,treatment,102,5.25,2
+toluene,fresh,treatment,102,0.56,3
+toluene,fresh,sterile,102,NA,1
+toluene,fresh,sterile,102,NA,2
+toluene,fresh,sterile,102,NA,3
+toluene,brackish,treatment,102,10.15,1
+toluene,brackish,treatment,102,3.815,2
+toluene,brackish,treatment,102,3.15,3
+toluene,brackish,sterile,102,NA,1
+toluene,brackish,sterile,102,NA,2
+toluene,brackish,sterile,102,NA,3
+toluene,saline,treatment,102,1.33,1
+toluene,saline,treatment,102,0.175,2
+toluene,saline,treatment,102,4.305,3
+toluene,saline,sterile,102,NA,1
+toluene,saline,sterile,102,NA,2
+toluene,saline,sterile,102,NA,3
+hexane,fresh,treatment,102,3.115,1
+hexane,fresh,treatment,102,12.39,2
+hexane,fresh,treatment,102,0.35,3
+hexane,fresh,sterile,102,NA,1
+hexane,fresh,sterile,102,NA,2
+hexane,fresh,sterile,102,NA,3
+hexane,brackish,treatment,102,1.085,1
+hexane,brackish,treatment,102,3.325,2
+hexane,brackish,treatment,102,7.455,3
+hexane,brackish,sterile,102,NA,1
+hexane,brackish,sterile,102,NA,2
+hexane,brackish,sterile,102,NA,3
+hexane,saline,treatment,102,2.485,1
+hexane,saline,treatment,102,-2.31,2
+hexane,saline,treatment,102,-0.28,3
+hexane,saline,sterile,102,NA,1
+hexane,saline,sterile,102,NA,2
+hexane,saline,sterile,102,NA,3
+unamended,fresh,unamended,102,12.845,1
+unamended,fresh,unamended,102,-1.505,2
+unamended,fresh,unamended,102,4.34,3
+unamended,brackish,unamended,102,0.84,1
+unamended,brackish,unamended,102,1.12,2
+unamended,brackish,unamended,102,0.28,3
+unamended,saline,unamended,102,-3.22,1
+unamended,saline,unamended,102,-1.855,2
+unamended,saline,unamended,102,-3.01,3
+unamended,fresh,media only,102,NA,1
+unamended,fresh,media only,102,NA,2
+unamended,fresh,media only,102,NA,3
+unamended,brackish,media only,102,NA,1
+unamended,brackish,media only,102,NA,2
+unamended,brackish,media only,102,NA,3
+unamended,saline,media only,102,NA,1
+unamended,saline,media only,102,NA,2
+unamended,saline,media only,102,NA,3
+benzene,fresh,treatment,116,14.665,1
+benzene,fresh,treatment,116,5.11,2
+benzene,fresh,treatment,116,5.565,3
+benzene,fresh,sterile,116,NA,1
+benzene,fresh,sterile,116,NA,2
+benzene,fresh,sterile,116,NA,3
+benzene,brackish,treatment,116,16.415,1
+benzene,brackish,treatment,116,21.595,2
+benzene,brackish,treatment,116,NA,3
+benzene,brackish,sterile,116,NA,1
+benzene,brackish,sterile,116,NA,2
+benzene,brackish,sterile,116,NA,3
+benzene,saline,treatment,116,-1.855,1
+benzene,saline,treatment,116,-1.47,2
+benzene,saline,treatment,116,-1.855,3
+benzene,saline,sterile,116,NA,1
+benzene,saline,sterile,116,NA,2
+benzene,saline,sterile,116,NA,3
+toluene,fresh,treatment,116,6.79,1
+toluene,fresh,treatment,116,5.845,2
+toluene,fresh,treatment,116,1.015,3
+toluene,fresh,sterile,116,NA,1
+toluene,fresh,sterile,116,NA,2
+toluene,fresh,sterile,116,NA,3
+toluene,brackish,treatment,116,10.78,1
+toluene,brackish,treatment,116,4.375,2
+toluene,brackish,treatment,116,3.22,3
+toluene,brackish,sterile,116,NA,1
+toluene,brackish,sterile,116,NA,2
+toluene,brackish,sterile,116,NA,3
+toluene,saline,treatment,116,1.68,1
+toluene,saline,treatment,116,0.91,2
+toluene,saline,treatment,116,4.69,3
+toluene,saline,sterile,116,NA,1
+toluene,saline,sterile,116,NA,2
+toluene,saline,sterile,116,NA,3
+hexane,fresh,treatment,116,3.43,1
+hexane,fresh,treatment,116,18.935,2
+hexane,fresh,treatment,116,0.945,3
+hexane,fresh,sterile,116,NA,1
+hexane,fresh,sterile,116,NA,2
+hexane,fresh,sterile,116,NA,3
+hexane,brackish,treatment,116,6.44,1
+hexane,brackish,treatment,116,7.035,2
+hexane,brackish,treatment,116,11.725,3
+hexane,brackish,sterile,116,NA,1
+hexane,brackish,sterile,116,NA,2
+hexane,brackish,sterile,116,NA,3
+hexane,saline,treatment,116,3.43,1
+hexane,saline,treatment,116,-1.855,2
+hexane,saline,treatment,116,0.245,3
+hexane,saline,sterile,116,NA,1
+hexane,saline,sterile,116,NA,2
+hexane,saline,sterile,116,NA,3
+unamended,fresh,unamended,116,12.215,1
+unamended,fresh,unamended,116,-1.225,2
+unamended,fresh,unamended,116,8.96,3
+unamended,brackish,unamended,116,NA,1
+unamended,brackish,unamended,116,2.66,2
+unamended,brackish,unamended,116,0.805,3
+unamended,saline,unamended,116,-2.695,1
+unamended,saline,unamended,116,-1.19,2
+unamended,saline,unamended,116,-2.38,3
+unamended,fresh,media only,116,NA,1
+unamended,fresh,media only,116,NA,2
+unamended,fresh,media only,116,NA,3
+unamended,brackish,media only,116,NA,1
+unamended,brackish,media only,116,NA,2
+unamended,brackish,media only,116,NA,3
+unamended,saline,media only,116,NA,1
+unamended,saline,media only,116,NA,2
+unamended,saline,media only,116,NA,3
